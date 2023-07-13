@@ -1,3 +1,2 @@
-DROP DATABASE IF EXISTS ;
-CREATE DATABASE ;
--- Set Database here !!!
+DROP DATABASE IF EXISTS donomon_db;
+CREATE DATABASE donomon_db;
