@@ -7,12 +7,12 @@ class Answer extends Model {}
 Answer.init(
     {
         id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.INT,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
             },
-        answer: {
+        text: {
             type: DataTypes.STRING,
             allowNull: false,
             },
