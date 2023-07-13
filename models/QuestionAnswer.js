@@ -37,7 +37,7 @@ QuestionAnswer.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'questionAnswer',
-  }
+  },
 );
 
 module.exports = QuestionAnswer;

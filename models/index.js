@@ -3,21 +3,20 @@ const Question = require('./Question');
 const Answer = require('./Answer');
 const QuestionAnswer = require('./QuestionAnswer');
 
-Question.hasMany(Answer, {
-    through: {
-        model: QuestionAnswer,
-        unique: false,
-    },
-    as: 'answers'
+Question.belongsToMany(Answer, {
+  through: {
+    model: QuestionAnswer,
+    unique: false,
+  },
+  as: 'answers',
 });
 
 Answer.belongsToMany(Question, {
-    through: {
-        model: QuestionAnswer,
-        unique: false,
-    },
-    as: 'questions'
+  through: {
+    model: QuestionAnswer,
+    unique: false,
+  },
+  as: 'questions',
 });
 
-module.exports = {Question, Answer, QuestionAnswer };
-
+module.exports = { Question, Answer, QuestionAnswer };
