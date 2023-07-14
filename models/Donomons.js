@@ -45,3 +45,8 @@ Donomon.init(
     modelName: 'donomon',
   },
 );
+
+module.exports = Donomon;
+
+// Logic needed for leveling up
+
