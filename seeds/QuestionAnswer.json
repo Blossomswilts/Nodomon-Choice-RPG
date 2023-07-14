@@ -4,5 +4,12 @@
     "answerId": 1,
     "answerValue": -3,
     "experience": 5
+  },
+   
+  {
+    "questionId": 1,
+    "answerId": 2,
+    "answerValue": 3,
+    "experience": 5
   }
 ]
