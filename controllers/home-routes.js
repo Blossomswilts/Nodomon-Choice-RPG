@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Character } = require('../models');
+const { Answer, Question, QuestionAnswer } = require('../models');
 
 router.get('/', async (req, res) => {
     res.render('homepage');
