@@ -1,4 +1,4 @@
-const User = require('./User');
+// const User = require('./User');
 const Question = require('./Question');
 const Answer = require('./Answer');
 const QuestionAnswer = require('./QuestionAnswer');
@@ -8,7 +8,7 @@ Question.belongsToMany(Answer, {
     model: QuestionAnswer,
     unique: false,
   },
-  as: 'answers',
+  as: 'answer',
 });
 
 Answer.belongsToMany(Question, {
@@ -16,7 +16,7 @@ Answer.belongsToMany(Question, {
     model: QuestionAnswer,
     unique: false,
   },
-  as: 'questions',
+  as: 'question',
 });
 
 module.exports = { Question, Answer, QuestionAnswer };

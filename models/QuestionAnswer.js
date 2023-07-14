@@ -7,7 +7,7 @@ class QuestionAnswer extends Model {}
 QuestionAnswer.init(
   {
     questionId: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       references: {
         model: 'question',
@@ -15,7 +15,7 @@ QuestionAnswer.init(
       },
     },
     answerId: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       references: {
         model: 'answer',
