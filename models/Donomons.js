@@ -36,6 +36,14 @@ Donomon.init(
       DEFAULT: 0,
       allowNull: false,
     },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,
@@ -48,5 +56,5 @@ Donomon.init(
 
 module.exports = Donomon;
 
-// Logic needed for leveling up
+
 

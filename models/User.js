@@ -35,6 +35,14 @@ User.init(
         len: [8],
       },
     },
+    donomonId: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'donomon',
+        key: 'id',
+      },
+    },
   },
   {
     hooks: {
