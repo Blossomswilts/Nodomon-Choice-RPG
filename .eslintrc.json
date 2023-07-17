@@ -29,10 +29,10 @@
     "no-use-before-define": "error",
     "no-redeclare": "error",
     "brace-style": "error",
-    "indent": ["error", 2],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
-    "radix": "off"
+    "radix": "off",
+    "indent": ["error", 4, { "SwitchCase": 1 }]
   },
   "extends": ["prettier"]
 }

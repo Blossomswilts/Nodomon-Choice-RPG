@@ -6,55 +6,52 @@ const sequelize = require('../config/connection');
 class Donomon extends Model {}
 
 Donomon.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        level: {
+            type: DataTypes.INTEGER,
+            DEFAULT: 1,
+            allowNull: false,
+        },
+        exp: {
+            type: DataTypes.INTEGER,
+            DEFAULT: 0,
+            allowNull: false,
+        },
+        morality: {
+            type: DataTypes.INTEGER,
+            DEFAULT: 0,
+            allowNull: false,
+        },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+        },
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'donomon',
     },
-    type: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    level: {
-      type: DataTypes.INTEGER,
-      DEFAULT: 1,
-      allowNull: false,
-    },
-    exp: {
-      type: DataTypes.INTEGER,
-      DEFAULT: 0,
-      allowNull: false,
-    },
-    morality: {
-      type: DataTypes.INTEGER,
-      DEFAULT: 0,
-      allowNull: false,
-    },
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
-  },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'donomon',
-  },
 );
 
 module.exports = Donomon;
-
-
-
