@@ -44,6 +44,10 @@ Donomon.init(
                 key: 'id',
             },
         },
+        references: {
+            model: 'donomonType',
+            key: 'id',
+        },
     },
     {
         sequelize,

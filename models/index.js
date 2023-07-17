@@ -3,6 +3,7 @@ const Question = require('./Question');
 const Answer = require('./Answer');
 const QuestionAnswer = require('./QuestionAnswer');
 const Donomon = require('./Donomons');
+const DonomonType = require('./DonomonType');
 // This sets up questions and answers to be associated with each other
 Question.belongsToMany(Answer, {
     through: {
@@ -29,6 +30,14 @@ User.hasMany(Donomon, {
 // Set up donomon to belong to user (belongs to user)
 Donomon.belongsTo(User, {
     foreignKey: 'user_id',
+});
+
+Donomon.belongsTo(DonomonType, {
+    foreignKey: '',
+});
+
+DonomonType.hasMany(Donomon, {
+    foreignKey: '',
 });
 
 module.exports = { Question, Answer, QuestionAnswer, User, Donomon };

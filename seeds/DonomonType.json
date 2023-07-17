@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Turbulin",
+        "type": "water"
+    },
+    {
+        "name": "Trushblin",
+        "type": "water/dark"
+    },
+    {
+        "name": "Truskblind",
+        "type": "water/light"
+    },
+    {
+        "name": "Trillnight",
+        "type": "water/midnight"
+    },
+    {
+        "name": "Triskloon",
+        "type": "water/cloud"
+    },
+    {
+        "name": "Trisklown",
+        "type": "water/cloud"
+    },
+    {
+        "name": "Trushblinding",
+        "type": "water/radiant"
+    },
+
+
+
+    {
+        "name": "",
+        "type": "fire"
+    },
+    {
+        "name": "",
+        "type": "fire/dark"
+    },
+    {
+        "name": "",
+        "type": "fire/light"
+    },
+    {
+        "name": "",
+        "type": "fire/midnight"
+    },
+    {
+        "name": "",
+        "type": "fire/cloud"
+    },
+    {
+        "name": "",
+        "type": "fire/cloud"
+    },
+    {
+        "name": "",
+        "type": "fire/radiant"
+    },
+
+
+
+    {
+        "name": "",
+        "type": "grass"
+    },
+    {
+        "name": "",
+        "type": "grass/dark"
+    },
+    {
+        "name": "",
+        "type": "grass/light"
+    },
+    {
+        "name": "",
+        "type": "grass/midnight"
+    },
+    {
+        "name": "",
+        "type": "grass/cloud"
+    },
+    {
+        "name": "",
+        "type": "grass/cloud"
+    },
+    {
+        "name": "",
+        "type": "grass/radiant"
+    }
+]
