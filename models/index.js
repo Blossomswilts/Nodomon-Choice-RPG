@@ -2,7 +2,7 @@ const User = require('./User');
 const Question = require('./Question');
 const Answer = require('./Answer');
 const QuestionAnswer = require('./QuestionAnswer');
-const Donomon = require('./Donomon');
+const Donomon = require('./Donomons');
 // This sets up questions and answers to be associated with each other
 Question.belongsToMany(Answer, {
   through: {
