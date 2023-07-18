@@ -1,0 +1,34 @@
+<!-- adventure.handlebars -->
+ <h1>Adventure</h1>
+
+
+{{#each questions}}
+<section class="questions-ex"  data-id="{{id}}">
+    <h2>{{text}}</h2>
+
+    <select id="let's play">
+        {{#each answers}}
+            <option 
+                value="{{answerValue}}"
+                data-qid="{{questionId}}"
+                data-aid="{{answerId}}"
+                style="display:none;">
+                {{answerValue}}
+            </option>
+
+        {{/each}}
+
+    </select>
+</section>
+{{/each questions}}
+  <optgroup label="Next Evolve">
+    {{#each nextEvolve}}
+      <option value="{{this}}">{{this}}</option>
+    {{/each}}
+  </optgroup>
+</select>
+
+
+
+
+<script src="./js/adventure.js"></script>
