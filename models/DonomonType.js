@@ -3,9 +3,9 @@ const sequelize = require('../config/connection');
 
 // Create a table to hold Donomons to be used in the game
 
-class Donomon extends Model {}
+class DonomonType extends Model {}
 
-Donomon.init(
+DonomonType.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -35,4 +35,4 @@ Donomon.init(
     },
 );
 
-module.exports = Donomon;
+module.exports = DonomonType;

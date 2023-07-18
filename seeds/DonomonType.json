@@ -31,62 +31,62 @@
 
 
     {
-        "name": "",
+        "name": "Raskat",
         "type": "fire"
     },
     {
-        "name": "",
+        "name": "Riskin",
         "type": "fire/dark"
     },
     {
-        "name": "",
+        "name": "Roskight",
         "type": "fire/light"
     },
     {
-        "name": "",
+        "name": "Risknuit",
         "type": "fire/midnight"
     },
     {
-        "name": "",
+        "name": "Rosekin",
         "type": "fire/cloud"
     },
     {
-        "name": "",
+        "name": "Remskyte",
         "type": "fire/cloud"
     },
     {
-        "name": "",
+        "name": "Raskatiant",
         "type": "fire/radiant"
     },
 
 
 
     {
-        "name": "",
+        "name": "Snoober",
         "type": "grass"
     },
     {
-        "name": "",
+        "name": "Snarker",
         "type": "grass/dark"
     },
     {
-        "name": "",
+        "name": "Snipight",
         "type": "grass/light"
     },
     {
-        "name": "",
+        "name": "Snawitchin",
         "type": "grass/midnight"
     },
     {
-        "name": "",
+        "name": "Snowsyke",
         "type": "grass/cloud"
     },
     {
-        "name": "",
+        "name": "Snawitch",
         "type": "grass/cloud"
     },
     {
-        "name": "",
+        "name": "Snoobeam",
         "type": "grass/radiant"
     }
 ]
