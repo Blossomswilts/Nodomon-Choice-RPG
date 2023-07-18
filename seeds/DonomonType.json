@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Turbulin",
+        "type": "water"
+    },
+    {
+        "name": "Trushblin",
+        "type": "water/dark"
+    },
+    {
+        "name": "Truskblind",
+        "type": "water/light"
+    },
+    {
+        "name": "Trillnight",
+        "type": "water/midnight"
+    },
+    {
+        "name": "Triskloon",
+        "type": "water/cloud"
+    },
+    {
+        "name": "Trisklown",
+        "type": "water/cloud"
+    },
+    {
+        "name": "Trushblinding",
+        "type": "water/radiant"
+    },
+
+
+
+    {
+        "name": "Raskat",
+        "type": "fire"
+    },
+    {
+        "name": "Riskin",
+        "type": "fire/dark"
+    },
+    {
+        "name": "Roskight",
+        "type": "fire/light"
+    },
+    {
+        "name": "Risknuit",
+        "type": "fire/midnight"
+    },
+    {
+        "name": "Rosekin",
+        "type": "fire/cloud"
+    },
+    {
+        "name": "Remskyte",
+        "type": "fire/cloud"
+    },
+    {
+        "name": "Raskatiant",
+        "type": "fire/radiant"
+    },
+
+
+
+    {
+        "name": "Snoober",
+        "type": "grass"
+    },
+    {
+        "name": "Snarker",
+        "type": "grass/dark"
+    },
+    {
+        "name": "Snipight",
+        "type": "grass/light"
+    },
+    {
+        "name": "Snawitchin",
+        "type": "grass/midnight"
+    },
+    {
+        "name": "Snowsyke",
+        "type": "grass/cloud"
+    },
+    {
+        "name": "Snawitch",
+        "type": "grass/cloud"
+    },
+    {
+        "name": "Snoobeam",
+        "type": "grass/radiant"
+    }
+]

@@ -39,8 +39,17 @@ Donomon.init(
         userId: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            foreignKey: true,
             references: {
                 model: 'user',
+                key: 'id',
+            },
+        },
+        donomonTypeId: {
+            allowNull: false,
+            foreignKey: true,
+            references: {
+                model: 'donomonType',
                 key: 'id',
             },
         },
