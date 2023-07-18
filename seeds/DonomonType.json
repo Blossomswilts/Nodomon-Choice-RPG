@@ -28,8 +28,6 @@
         "type": "water/radiant"
     },
 
-
-
     {
         "name": "Raskat",
         "type": "fire"
@@ -58,8 +56,6 @@
         "name": "Raskatiant",
         "type": "fire/radiant"
     },
-
-
 
     {
         "name": "Snoober",
