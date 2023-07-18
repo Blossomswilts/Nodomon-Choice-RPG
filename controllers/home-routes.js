@@ -9,13 +9,13 @@ router.get('/', async (req, res) => {
 router.get('/adventure', /*withAuth, */async (req, res) => {
 
     // Get all Questions
-
+    const allQuestions = await Question.findAll();
 
     // Get all Answers
-
+    const allAnswers = await Answer.findAll();
 
     // Add { questions, answers } to render
-    res.render('adventure');
+    res.render('adventure', { allQuestions, allAnswers });
 });
 
 router.get('/profile', /*withAuth, */async (req, res) => {
