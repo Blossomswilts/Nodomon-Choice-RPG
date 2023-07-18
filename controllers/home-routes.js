@@ -1,35 +1,40 @@
 const router = require('express').Router();
-const { Answer, Question, QuestionAnswer } = require('../models');
+const { Answer, Donomon, Question, QuestionAnswer } = require('../models');
+//const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     res.render('homepage');
 })
 
-router.get('/adventure', async (req, res) => {
-    if (!req.session.loggedIn) {
-        res.redirect('/login');
-    }
+router.get('/adventure', /*withAuth, */async (req, res) => {
     res.render('adventure');
 });
 
-router.get('/character', async (req, res) => {
-    if (!req.session.loggedIn) {
-        res.redirect('/login');
-    }
-    res.render('character');
-});
-
-router.get('/character/:id', async (req, res) => {
-    const donomonData = await Character.findByPk(req.params.id, {
-
+router.get('/profile', /*withAuth, */async (req, res) => {
+    const donomonData = await Donomon.findAll({
+        where: {
+            userId: req.session.userId
+        }
     });
+    const donomons = donomonData.map(donomon => donomon.get({ plain: true }));
+    const username = req.session.username;
+    res.render('profile', { donomons, username });
 });
+
+// router.get('/character/:id', /*withAuth, */async (req, res) => {
+//     const donomonData = await Donomon.findByPk(req.params.id, {
+        
+//     });
+
+//     res.render('donomon');
+// });
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
-        return;
+    } else {
+        res.render('login');
     }
-
-    res.render('login');
 });
+
+module.exports = router;
