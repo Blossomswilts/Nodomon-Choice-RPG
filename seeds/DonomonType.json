@@ -1,88 +1,109 @@
 [
     {
         "name": "Turbulin",
-        "type": "water"
+        "type": "water",
+        "evolution": 1
     },
     {
         "name": "Trushblin",
-        "type": "water/dark"
+        "type": "water/dark",
+        "evolution": 2
     },
     {
         "name": "Truskblind",
-        "type": "water/light"
+        "type": "water/light",
+        "evolution": 2
     },
     {
         "name": "Trillnight",
-        "type": "water/midnight"
+        "type": "water/midnight",
+        "evolution": 3
     },
     {
         "name": "Triskloon",
-        "type": "water/cloud"
+        "type": "water/cloud",
+        "evolution": 3
     },
     {
         "name": "Trisklown",
-        "type": "water/cloud"
+        "type": "water/cloud",
+        "evolution": 3
     },
     {
         "name": "Trushblinding",
-        "type": "water/radiant"
+        "type": "water/radiant",
+        "evolution": 3
     },
 
     {
         "name": "Raskat",
-        "type": "fire"
+        "type": "fire",
+        "evolution": 1
     },
     {
         "name": "Riskin",
-        "type": "fire/dark"
+        "type": "fire/dark",
+        "evolution": 2
     },
     {
         "name": "Roskight",
-        "type": "fire/light"
+        "type": "fire/light",
+        "evolution": 2
     },
     {
         "name": "Risknuit",
-        "type": "fire/midnight"
+        "type": "fire/midnight",
+        "evolution": 3
     },
     {
         "name": "Rosekin",
-        "type": "fire/cloud"
+        "type": "fire/cloud",
+        "evolution": 3
     },
     {
         "name": "Remskyte",
-        "type": "fire/cloud"
+        "type": "fire/cloud",
+        "evolution": 3
     },
     {
         "name": "Raskatiant",
-        "type": "fire/radiant"
+        "type": "fire/radiant",
+        "evolution": 3
     },
 
     {
         "name": "Snoober",
-        "type": "grass"
+        "type": "grass",
+        "evolution": 1
     },
     {
         "name": "Snarker",
-        "type": "grass/dark"
+        "type": "grass/dark",
+        "evolution": 2
     },
     {
         "name": "Snipight",
-        "type": "grass/light"
+        "type": "grass/light",
+        "evolution": 2
     },
     {
         "name": "Snawitchin",
-        "type": "grass/midnight"
+        "type": "grass/midnight",
+        "evolution": 3
     },
     {
         "name": "Snowsyke",
-        "type": "grass/cloud"
+        "type": "grass/cloud",
+        "evolution": 3
     },
     {
         "name": "Snawitch",
-        "type": "grass/cloud"
+        "type": "grass/cloud",
+        "evolution": 3
     },
     {
         "name": "Snoobeam",
-        "type": "grass/radiant"
+        "type": "grass/radiant",
+        "evolution": 3
     }
 ]

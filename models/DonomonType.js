@@ -25,6 +25,10 @@ DonomonType.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        evolution: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
     },
     {
         sequelize,
