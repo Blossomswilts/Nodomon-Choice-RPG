@@ -35,9 +35,10 @@ User.init(
                 len: [8],
             },
         },
-        donomonId: {
+        activeDonomonId: {
             type: DataTypes.INTEGER,
             allowNull: true,
+            foreignKey: true,
             references: {
                 model: 'donomon',
                 key: 'id',
