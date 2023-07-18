@@ -14,11 +14,11 @@ const PORT = process.env.PORT || 3001;
 // Set up Handlebars.js engine with custom helpers
 
 app.get('/', function (_req, res) {
-    res.render('home', {
-      title: 'NODOMON-CHOICE-RPG',
-      message: 'Welcome Adventurer!'
-    });
+  res.render('home', {
+    title: 'NODOMON-CHOICE-RPG',
+    message: 'Welcome Adventurer!'
   });
+});
 
 const hbs = exphbs.create({ helpers });
 
