@@ -46,6 +46,7 @@ Donomon.init(
             },
         },
         donomonTypeId: {
+            type: DataTypes.INTEGER,
             allowNull: false,
             foreignKey: true,
             references: {
