@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 
 app.get('/', function (_req, res) {
   res.render('home', {
-    title: 'NODOMON-CHOICE-RPG',
+    title: 'DONOMON',
     message: 'Welcome Adventurer!'
   });
 });
