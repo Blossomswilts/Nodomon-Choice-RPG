@@ -9,6 +9,7 @@ QuestionAnswer.init(
         questionId: {
             type: DataTypes.INTEGER,
             primaryKey: true,
+            foreignKey: true,
             references: {
                 model: 'question',
                 key: 'id',
@@ -17,6 +18,7 @@ QuestionAnswer.init(
         answerId: {
             type: DataTypes.INTEGER,
             primaryKey: true,
+            foreignKey: true,
             references: {
                 model: 'answer',
                 key: 'id',
