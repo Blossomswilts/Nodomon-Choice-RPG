@@ -1,3 +1,6 @@
+const sequelize = require('../config/connection');
+const { Question, Answer, QuestionAnswer } = require('../models');
+
 const questionData = require('./Questions.json');
 const answerData = require('./Answer.json');
 const questionAnswerData = require('./questionAnswer.json');
