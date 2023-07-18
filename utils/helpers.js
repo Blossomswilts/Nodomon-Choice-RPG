@@ -1,48 +1,38 @@
-module.exports = {};
-
 const { Donomon } = require('../models');
-
+//___________________________________________________EVOLVE FUNCTION_______________________________________________________
 // Evolve function for Donomon
-const evolve = async (donomonId) => {
-    // Find the donomon by id
-    const donomon = await Donomon.findByPk(donomonId);
+const evolve = async (donomon) => {
     // Get the name and morality
-    const name = donomon.name;
+    const id = donomon.id;
     const morality = donomon.morality;
+    let name;
+    let type;
     // Evolve depending on name and morality
-    switch (name) {
+    switch (donomon.name) {
         case 'Turbulin':
             if (morality >= 0) {
-                await Donomon.update(
-                    {
-                        name: 'Truskblind',
-                        type: 'water/light',
-                    },
-                    {
-                        where: {
-                            id: donomonId,
-                        },
-                    },
-                );
-            } else if (morality < 0) {
-                await Donomon.update(
-                    {
-                        type: 'Trushblin',
-                        name: 'water/dark',
-                    },
-                    {
-                        where: {
-                            id: donomonId,
-                        },
-                    },
-                );
+                name = 'Truskblind';
+                type = 'water/light';
+            } else {
+                name = 'Trushblin';
+                type = 'water/dark';
             }
+            await Donomon.update(
+                {
+                    type,
+                    name,
+                },
+                {
+                    where: {
+                        id,
+                    },
+                },
+            );
             break;
         default:
     }
-    return donomon;
 };
-
+//___________________________________________________LEVEL UP FUNCTION_______________________________________________________
 // Level up function for Donomon
 const levelUp = async (donomonId) => {
     // Find the donomon by id
@@ -72,7 +62,7 @@ const levelUp = async (donomonId) => {
             break;
         case 70:
             level = 8;
-            evolve();
+            evolve(donomon);
             break;
         case 80:
             level = 9;
@@ -97,7 +87,7 @@ const levelUp = async (donomonId) => {
             break;
         case 150:
             level = 16;
-            evolve();
+            evolve(donomon);
             break;
         default:
     }
@@ -112,10 +102,6 @@ const levelUp = async (donomonId) => {
             },
         },
     );
-    // Return the updated donomon
-    return donomon;
 };
-
-
 
 exports.levelUp = levelUp;
