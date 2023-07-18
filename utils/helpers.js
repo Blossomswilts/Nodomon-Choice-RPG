@@ -1,6 +1,48 @@
 module.exports = {};
 
 const { Donomon } = require('../models');
+
+// Evolve function for Donomon
+const evolve = async (donomonId) => {
+    // Find the donomon by id
+    const donomon = await Donomon.findByPk(donomonId);
+    // Get the name and morality
+    const name = donomon.name;
+    const morality = donomon.morality;
+    // Evolve depending on name and morality
+    switch (name) {
+        case 'Turbulin':
+            if (morality >= 0) {
+                await Donomon.update(
+                    {
+                        name: 'Truskblind',
+                        type: 'water/light',
+                    },
+                    {
+                        where: {
+                            id: donomonId,
+                        },
+                    },
+                );
+            } else if (morality < 0) {
+                await Donomon.update(
+                    {
+                        type: 'Trushblin',
+                        name: 'water/dark',
+                    },
+                    {
+                        where: {
+                            id: donomonId,
+                        },
+                    },
+                );
+            }
+            break;
+        default:
+    }
+    return donomon;
+};
+
 // Level up function for Donomon
 const levelUp = async (donomonId) => {
     // Find the donomon by id
@@ -73,5 +115,7 @@ const levelUp = async (donomonId) => {
     // Return the updated donomon
     return donomon;
 };
+
+
 
 exports.levelUp = levelUp;
