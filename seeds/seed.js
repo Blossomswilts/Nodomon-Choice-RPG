@@ -6,15 +6,15 @@ const answerData = require('./Answer.json');
 const questionAnswerData = require('./questionAnswer.json');
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+    await sequelize.sync({ force: true });
 
-  await Question.bulkCreate(questionData);
+    await Question.bulkCreate(questionData);
 
-  await Answer.bulkCreate(answerData);
+    await Answer.bulkCreate(answerData);
 
-  await QuestionAnswer.bulkCreate(questionAnswerData);
+    await QuestionAnswer.bulkCreate(questionAnswerData);
 
-  process.exit(0);
+    process.exit(0);
 };
 
 seedDatabase();

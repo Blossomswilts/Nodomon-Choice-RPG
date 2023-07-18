@@ -4,5 +4,623 @@
     "answerId": 1,
     "answerValue": -3,
     "experience": 5
+  }, 
+  {
+    "questionId": 1,
+    "answerId": 2,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 1,
+    "answerId": 4,
+    "answerValue": -2,
+    "experience": 5
+  },
+  {
+    "questionId": 1,
+    "answerId": 3,
+    "answerValue": 1,
+    "experience": 5
+  },
+
+  {
+    "questionId": 2,
+    "answerId": 6,
+    "answerValue": -1,
+    "experience": 5
+  },
+  {
+    "questionId": 2,
+    "answerId": 5,
+    "answerValue": -3,
+    "experience": 5
+  },
+  {
+    "questionId": 2,
+    "answerId": 7,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 2,
+    "answerId": 1,
+    "answerValue": 1,
+    "experience": 5
+  },
+
+  {
+    "questionId": 3,
+    "answerId": 9,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 3,
+    "answerId": 1,
+    "answerValue": -2,
+    "experience": 5
+  },
+  {
+    "questionId": 3,
+    "answerId": 8,
+    "answerValue": -3,
+    "experience": 5
+  },
+  {
+    "questionId": 3,
+    "answerId": 7,
+    "answerValue": 1,
+    "experience": 5
+  },
+
+  {
+    "questionId": 4,
+    "answerId": 10,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 4,
+    "answerId": 8,
+    "answerValue": -3,
+    "experience": 5
+  },
+  {
+    "questionId": 4,
+    "answerId": 11,
+    "answerValue": -2,
+    "experience": 5
+  },
+  {
+    "questionId": 4,
+    "answerId": 1,
+    "answerValue": 1,
+    "experience": 5
+  },
+
+  {
+    "questionId": 5,
+    "answerId": 12,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 5,
+    "answerId": 14,
+    "answerValue": -3,
+    "experience": 5
+  },
+  {
+    "questionId": 5,
+    "answerId": 13,
+    "answerValue": 2,
+    "experience": 5
+  },
+  {
+    "questionId": 5,
+    "answerId": 16,
+    "answerValue": -2,
+    "experience": 5
+  },
+
+  {
+    "questionId": 6,
+    "answerId": 16,
+    "answerValue": -2,
+    "experience": 5
+  },
+  {
+    "questionId": 6,
+    "answerId": 1,
+    "answerValue": -1,
+    "experience": 5
+  },
+  {
+    "questionId": 6,
+    "answerId": 4,
+    "answerValue": 1,
+    "experience": 5
+  },
+  {
+    "questionId": 6,
+    "answerId": 12,
+    "answerValue": 3,
+    "experience": 5
+  },
+
+  {
+    "questionId": 7,
+    "answerId": 18,
+    "answerValue": -3,
+    "experience": 5
+  },
+  {
+    "questionId": 7,
+    "answerId": 9,
+    "answerValue": 1,
+    "experience": 5
+  },
+  {
+    "questionId": 7,
+    "answerId": 17,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 7,
+    "answerId": 19,
+    "answerValue": -1,
+    "experience": 5
+  },
+
+  {
+    "questionId": 8,
+    "answerId": 21,
+    "answerValue": -3,
+    "experience": 5
+  },
+  {
+    "questionId": 8,
+    "answerId": 20,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 8,
+    "answerId": 1,
+    "answerValue": 1,
+    "experience": 5
+  },
+  {
+    "questionId": 8,
+    "answerId": 22,
+    "answerValue": -2,
+    "experience": 5
+  },
+
+  {
+    "questionId": 9,
+    "answerId": 23,
+    "answerValue": 2,
+    "experience": 5
+  },
+  {
+    "questionId": 9,
+    "answerId": 24,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 9,
+    "answerId": 12,
+    "answerValue": -3,
+    "experience": 5
+  },
+  {
+    "questionId": 9,
+    "answerId": 4,
+    "answerValue": -2,
+    "experience": 5
+  },
+
+  {
+    "questionId": 10,
+    "answerId": 26,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 10,
+    "answerId": 27,
+    "answerValue": 0,
+    "experience": 5
+  },
+  {
+    "questionId": 10,
+    "answerId": 25,
+    "answerValue": -3,
+    "experience": 5
+  },
+  {
+    "questionId": 10,
+    "answerId": 8,
+    "answerValue": -2,
+    "experience": 5
+  },
+
+  {
+    "questionId": 11,
+    "answerId": 30,
+    "answerValue": -2,
+    "experience": 5
+  },
+  {
+    "questionId": 11,
+    "answerId": 29,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 11,
+    "answerId": 31,
+    "answerValue": 2,
+    "experience": 5
+  },
+  {
+    "questionId": 11,
+    "answerId": 28,
+    "answerValue": -1,
+    "experience": 5
+  },
+
+  {
+    "questionId": 12,
+    "answerId": 35,
+    "answerValue": 2,
+    "experience": 5
+  },
+  {
+    "questionId": 12,
+    "answerId": 32,
+    "answerValue": -1,
+    "experience": 5
+  },
+  {
+    "questionId": 12,
+    "answerId": 33,
+    "answerValue": -5,
+    "experience": 5
+  },
+  {
+    "questionId": 12,
+    "answerId": 34,
+    "answerValue": 5,
+    "experience": 5
+  },
+
+  {
+    "questionId": 13,
+    "answerId": 36,
+    "answerValue": -3,
+    "experience": 5
+  },
+  {
+    "questionId": 13,
+    "answerId": 37,
+    "answerValue": 2,
+    "experience": 5
+  },
+  {
+    "questionId": 13,
+    "answerId": 12,
+    "answerValue": -1,
+    "experience": 5
+  },
+  {
+    "questionId": 13,
+    "answerId": 13,
+    "answerValue": 2,
+    "experience": 5
+  },
+
+  {
+    "questionId": 14,
+    "answerId": 13,
+    "answerValue": 2,
+    "experience": 5
+  },
+  {
+    "questionId": 14,
+    "answerId": 27,
+    "answerValue": -1,
+    "experience": 5
+  },
+  {
+    "questionId": 14,
+    "answerId": 37,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 14,
+    "answerId": 14,
+    "answerValue": -3,
+    "experience": 5
+  },
+
+  {
+    "questionId": 15,
+    "answerId": 40,
+    "answerValue": -1,
+    "experience": 5
+  },
+  {
+    "questionId": 15,
+    "answerId": 41,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 15,
+    "answerId": 38,
+    "answerValue": 1,
+    "experience": 5
+  },
+  {
+    "questionId": 15,
+    "answerId": 39,
+    "answerValue": -4,
+    "experience": 5
+  },
+
+  {
+    "questionId": 16,
+    "answerId": 1,
+    "answerValue": 1,
+    "experience": 5
+  },
+  {
+    "questionId": 16,
+    "answerId": 42,
+    "answerValue": 2,
+    "experience": 5
+  },
+  {
+    "questionId": 16,
+    "answerId": 12,
+    "answerValue": -3,
+    "experience": 5
+  },
+  {
+    "questionId": 16,
+    "answerId": 15,
+    "answerValue": -1,
+    "experience": 5
+  },
+
+  {
+    "questionId": 17,
+    "answerId": 45,
+    "answerValue": -1,
+    "experience": 5
+  },
+  {
+    "questionId": 17,
+    "answerId": 44,
+    "answerValue": 0,
+    "experience": 5
+  },
+  {
+    "questionId": 17,
+    "answerId": 46,
+    "answerValue": -4,
+    "experience": 5
+  },
+  {
+    "questionId": 17,
+    "answerId": 43,
+    "answerValue": 3,
+    "experience": 5
+  },
+
+  {
+    "questionId": 18,
+    "answerId": 36,
+    "answerValue": 2,
+    "experience": 5
+  },
+  {
+    "questionId": 18,
+    "answerId": 28,
+    "answerValue": -1,
+    "experience": 5
+  },
+  {
+    "questionId": 18,
+    "answerId": 29,
+    "answerValue": 2,
+    "experience": 5
+  },
+  {
+    "questionId": 18,
+    "answerId": 48,
+    "answerValue": -2,
+    "experience": 5
+  },
+
+  {
+    "questionId": 19,
+    "answerId": 47,
+    "answerValue": 4,
+    "experience": 5
+  },
+  {
+    "questionId": 19,
+    "answerId": 49,
+    "answerValue": 2,
+    "experience": 5
+  },
+  {
+    "questionId": 19,
+    "answerId": 48,
+    "answerValue": -3,
+    "experience": 5
+  },
+  {
+    "questionId": 19,
+    "answerId": 27,
+    "answerValue": -2,
+    "experience": 5
+  },
+
+  {
+    "questionId": 20,
+    "answerId": 51,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 20,
+    "answerId": 50,
+    "answerValue": -1,
+    "experience": 5
+  },
+  {
+    "questionId": 20,
+    "answerId": 1,
+    "answerValue": -3,
+    "experience": 5
+  },
+  {
+    "questionId": 20,
+    "answerId": 27,
+    "answerValue": -3,
+    "experience": 5
+  },
+
+  {
+    "questionId": 21,
+    "answerId": 53,
+    "answerValue": -1,
+    "experience": 5
+  },
+  {
+    "questionId": 21,
+    "answerId": 54,
+    "answerValue": -5,
+    "experience": 5
+  },
+  {
+    "questionId": 21,
+    "answerId": 52,
+    "answerValue": 5,
+    "experience": 5
+  },
+  {
+    "questionId": 21,
+    "answerId": 1,
+    "answerValue": 2,
+    "experience": 5
+  },
+
+  {
+    "questionId": 22,
+    "answerId": 56,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 22,
+    "answerId": 27,
+    "answerValue": -1,
+    "experience": 5
+  },
+  {
+    "questionId": 22,
+    "answerId": 13,
+    "answerValue": 2,
+    "experience": 5
+  },
+  {
+    "questionId": 22,
+    "answerId": 55,
+    "answerValue": -3,
+    "experience": 5
+  },
+
+  {
+    "questionId": 23,
+    "answerId": 58,
+    "answerValue": -4,
+    "experience": 5
+  },
+  {
+    "questionId": 23,
+    "answerId": 59,
+    "answerValue": 3,
+    "experience": 5
+  },
+  {
+    "questionId": 23,
+    "answerId": 1,
+    "answerValue": 1,
+    "experience": 5
+  },
+  {
+    "questionId": 23,
+    "answerId": 57,
+    "answerValue": -3,
+    "experience": 5
+  },
+
+  {
+    "questionId": 24,
+    "answerId": 61,
+    "answerValue": 2,
+    "experience": 5
+  },
+  {
+    "questionId": 24,
+    "answerId": 1,
+    "answerValue": -2,
+    "experience": 5
+  },
+  {
+    "questionId": 24,
+    "answerId": 60,
+    "answerValue": -3,
+    "experience": 5
+  },
+  {
+    "questionId": 24,
+    "answerId": 37,
+    "answerValue": 3,
+    "experience": 5
+  },
+
+  {
+    "questionId": 25,
+    "answerId": 63,
+    "answerValue": 2,
+    "experience": 5
+  },
+  {
+    "questionId": 25,
+    "answerId": 62,
+    "answerValue": -3,
+    "experience": 5
+  },
+  {
+    "questionId": 25,
+    "answerId": 1,
+    "answerValue": 0,
+    "experience": 5
+  },
+  {
+    "questionId": 25,
+    "answerId": 8,
+    "answerValue": -1,
+    "experience": 5
   }
 ]

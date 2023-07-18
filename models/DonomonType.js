@@ -1,10 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// Create a table for answers
-class Answer extends Model {}
+// Create a table to hold Donomons to be used in the game
 
-Answer.init(
+class DonomonType extends Model {}
+
+DonomonType.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -12,7 +13,15 @@ Answer.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        text: {
+
+        // Name of the Donomon
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+
+        // Type of the Donomon
+        type: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -22,8 +31,8 @@ Answer.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'answer',
+        modelName: 'donomon',
     },
 );
 
-module.exports = Answer;
+module.exports = DonomonType;
