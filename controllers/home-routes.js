@@ -18,20 +18,32 @@ router.get('/adventure', /*withAuth, */async (req, res) => {
     res.render('adventure');
 });
 
-router.get('/profile', /*withAuth, */async (req, res) => {
-    const donomonData = await Donomon.findAll({
-        where: {
-            userId: req.session.userId
-        }
-    });
-    const donomons = donomonData.map(donomon => donomon.get({ plain: true }));
-    const username = req.session.username;
-    res.render('profile', { donomons, username });
-});
+router.get(
+    '/adventure',
+    /*withAuth, */ async (req, res) => {
+        res.render('adventure');
+    }
+);
+
+router.get(
+    '/profile',
+    /*withAuth, */ async (req, res) => {
+        const donomonData = await Donomon.findAll({
+            where: {
+                userId: req.session.userId,
+            },
+        });
+        const donomons = donomonData.map((donomon) =>
+            donomon.get({ plain: true })
+        );
+        const username = req.session.username;
+        res.render('profile', { donomons, username });
+    }
+);
 
 // router.get('/character/:id', /*withAuth, */async (req, res) => {
 //     const donomonData = await Donomon.findByPk(req.params.id, {
-        
+
 //     });
 
 //     res.render('donomon');
