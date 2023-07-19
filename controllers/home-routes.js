@@ -37,10 +37,6 @@ router.get(
 //     res.render('donomon');
 // });
 
-router.post('/create', async (req, res) => {
-    const newDonomon = await Donomon.create(req.body);
-})
-
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
