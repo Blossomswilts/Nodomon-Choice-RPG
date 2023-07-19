@@ -12,14 +12,6 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
-
-app.get('/', function (_req, res) {
-  res.render('home', {
-    title: 'DONOMON',
-    message: 'Welcome Adventurer!'
-  });
-});
-
 const hbs = exphbs.create({ helpers });
 
 const sess = {

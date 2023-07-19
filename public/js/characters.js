@@ -1,21 +1,21 @@
 const newFormHandler = async function (event) {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="character-title"]').value;
-    const body = document.querySelector('textarea[name="character-body"]').value;
+    // const name = document.getElementById('name').value;
+    const type = document.getElementById('type').value;
 
     await fetch('/api/character', {
         method: 'POST',
         body: JSON.stringify({
-            title,
-            body,
+            // name,
+            type,
         }),
         headers: { 'Content-Type': 'application/json' },
     });
 
-    document.location.replace('/dashboard');
+    document.location.reload();
 };
 
 document
-    .querySelector('#new-character-form')
+    .getElementById('new-character')
     .addEventListener('submit', newFormHandler);
