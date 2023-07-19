@@ -4,7 +4,6 @@ const sequelize = require('../../config/connection');
 
 //const withAuth = require('../utils/auth');
 
-// Sign up route
 router.get(
     '/random',
     /*withAuth,*/ async (req, res) => {
@@ -28,7 +27,5 @@ router.get(
         )[0];
         const randomQuestionPlain = randomQuestion.get({ plain: true });
         res.json(randomQuestionPlain);
-    },
 );
-
 module.exports = router;
