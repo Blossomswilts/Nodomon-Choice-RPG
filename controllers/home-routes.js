@@ -4,6 +4,18 @@ const { Answer, Donomon, Question, QuestionAnswer } = require('../models');
 
 router.get('/', async (req, res) => {
     res.render('homepage');
+})
+
+router.get('/adventure', /*withAuth, */async (req, res) => {
+
+    // Get all Questions
+
+
+    // Get all Answers
+
+
+    // Add { questions, answers } to render
+    res.render('adventure');
 });
 
 router.get(
