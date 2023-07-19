@@ -37,8 +37,8 @@ router.get(
 //     res.render('donomon');
 // });
 
-router.get('/create', async (req, res) => {
-    res.render('new-character');
+router.post('/create', async (req, res) => {
+    const newDonomon = await Donomon.create(req.body);
 })
 
 router.get('/login', (req, res) => {
