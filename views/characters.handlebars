@@ -1,0 +1,21 @@
+<div class='new character'>
+    <div class='character'>
+        <h2>create new character</h2>
+    </div>
+    <form id='new-character' class='card-body'>
+        {{! <label class='character' for='name'>name</label>
+        <input id='name' type='text' name='name' class='form-input' /> }}
+        <label class='form-character' for='type'>nodomon</label>
+        <select name='type' id='type'>
+            {{#each types}}
+                <option value='{{id}}'>{{name}}</option>
+            {{/each}}
+        </select>
+        <button id='submit' type='submit' class='btn'>create</button>
+    </form>
+    <h2>Your party</h2>
+    {{#each donomons}}
+        {{donomontype.name}}
+    {{/each}}
+</div>
+<script src='/js/characters.js'></script>

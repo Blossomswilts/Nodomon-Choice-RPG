@@ -35,7 +35,7 @@ DonomonType.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'donomon',
+        modelName: 'donomontype',
     },
 );
 

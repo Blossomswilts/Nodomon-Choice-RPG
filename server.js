@@ -12,20 +12,12 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
-
-app.get('/', function (_req, res) {
-    res.render('home', {
-        title: 'DONOMON',
-        message: 'Welcome Adventurer!',
-    });
-});
-
 const hbs = exphbs.create({ helpers });
 
 const sess = {
     secret: 'Super secret secret',
     cookie: {
-        maxAge: 300000,
+        maxAge: 60 * 60 * 1000, //increase time copy from mini project
         httpOnly: true,
         secure: false,
         sameSite: 'strict',
