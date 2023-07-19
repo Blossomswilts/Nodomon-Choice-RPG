@@ -40,4 +40,4 @@ DonomonType.hasMany(Donomon, {
     foreignKey: '',
 });
 
-module.exports = { Question, Answer, QuestionAnswer, User, Donomon };
+module.exports = { Question, Answer, QuestionAnswer, User, Donomon, DonomonType };
