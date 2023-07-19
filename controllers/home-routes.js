@@ -24,7 +24,6 @@ router.get(
         res.render('adventure');
     }
 );
-
 router.get(
     '/profile',
     /*withAuth, */ async (req, res) => {
@@ -34,6 +33,7 @@ router.get(
             },
         });
         const donomons = donomonData.map((donomon) =>
+
             donomon.get({ plain: true })
         );
         const username = req.session.username;

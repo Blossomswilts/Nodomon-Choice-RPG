@@ -27,7 +27,5 @@ router.get(
         )[0];
         const randomQuestionPlain = randomQuestion.get({ plain: true });
         res.json(randomQuestionPlain);
-    }
 );
-
 module.exports = router;
