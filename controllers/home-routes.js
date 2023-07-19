@@ -4,38 +4,42 @@ const { Answer, Donomon, Question, QuestionAnswer } = require('../models');
 
 router.get('/', async (req, res) => {
     res.render('homepage');
-})
-
-router.get('/adventure', /*withAuth, */async (req, res) => {
-
-    // Get all Questions
-
-
-    // Get all Answers
-
-
-    // Add { questions, answers } to render
-    res.render('adventure');
 });
 
-router.get('/profile', /*withAuth, */async (req, res) => {
-    const donomonData = await Donomon.findAll({
-        where: {
-            userId: req.session.userId
-        }
-    });
-    const donomons = donomonData.map(donomon => donomon.get({ plain: true }));
-    const username = req.session.username;
-    res.render('profile', { donomons, username });
-});
+router.get(
+    '/adventure',
+    /*withAuth, */ async (req, res) => {
+        res.render('adventure');
+    }
+);
+
+router.get(
+    '/profile',
+    /*withAuth, */ async (req, res) => {
+        const donomonData = await Donomon.findAll({
+            where: {
+                userId: req.session.userId,
+            },
+        });
+        const donomons = donomonData.map((donomon) =>
+            donomon.get({ plain: true })
+        );
+        const username = req.session.username;
+        res.render('profile', { donomons, username });
+    }
+);
 
 // router.get('/character/:id', /*withAuth, */async (req, res) => {
 //     const donomonData = await Donomon.findByPk(req.params.id, {
-        
+
 //     });
 
 //     res.render('donomon');
 // });
+
+router.post('/create', async (req, res) => {
+    const newDonomon = await Donomon.create(req.body);
+})
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
