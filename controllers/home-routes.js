@@ -4,11 +4,24 @@ const { Answer, Donomon, Question, QuestionAnswer } = require('../models');
 
 router.get('/', async (req, res) => {
     res.render('homepage');
+})
+
+router.get('/adventure', /*withAuth, */async (req, res) => {
+
+    // Get all Questions
+
+
+    // Get all Answers
+
+
+    // Add { questions, answers } to render
+    res.render('adventure');
 });
 
 router.get(
     '/adventure',
     /*withAuth, */ async (req, res) => {
+<<<<<<< HEAD
 <<<<<<< HEAD
         // Get all Questions
 
@@ -21,8 +34,11 @@ router.get(
         res.render('adventure');
     }
 >>>>>>> ff922715ab6920f4d8b19d4d0956cdf0a60a4be6
+=======
+        res.render('adventure');
+    }
+>>>>>>> 2dbf886cf633338a00d1fad4f009ef1c489e2f72
 );
-
 router.get(
     '/profile',
     /*withAuth, */ async (req, res) => {
@@ -33,18 +49,25 @@ router.get(
         });
         const donomons = donomonData.map((donomon) =>
 <<<<<<< HEAD
+<<<<<<< HEAD
             donomon.get({ plain: true }),
         );
         const username = req.session.username;
         res.render('profile', { donomons, username });
     },
 =======
+=======
+
+>>>>>>> 2dbf886cf633338a00d1fad4f009ef1c489e2f72
             donomon.get({ plain: true })
         );
         const username = req.session.username;
         res.render('profile', { donomons, username });
     }
+<<<<<<< HEAD
 >>>>>>> ff922715ab6920f4d8b19d4d0956cdf0a60a4be6
+=======
+>>>>>>> 2dbf886cf633338a00d1fad4f009ef1c489e2f72
 );
 
 // router.get('/character/:id', /*withAuth, */async (req, res) => {
@@ -54,10 +77,6 @@ router.get(
 
 //     res.render('donomon');
 // });
-
-router.post('/create', async (req, res) => {
-    const newDonomon = await Donomon.create(req.body);
-})
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
