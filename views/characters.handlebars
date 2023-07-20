@@ -5,7 +5,7 @@
     <form id='new-character' class='card-body'>
         {{! <label class='character' for='name'>name</label>
         <input id='name' type='text' name='name' class='form-input' /> }}
-        <label class='form-character' for='type'>nodomon</label>
+        <label class='form-character' for='type'>Nodomon</label>
         <select name='type' id='type'>
             {{#each types}}
                 <option value='{{id}}'>{{name}}</option>
@@ -15,7 +15,17 @@
     </form>
     <h2>Your party</h2>
     {{#each donomons}}
-        {{donomontype.name}}
+        {{!-- make a card bootstrap for each donomon --}}
+        <div class='card'>
+            <div class='card-body'>
+                <img src='{{name}}' alt='{{name}}' /> 
+                {{!-- make sure the image type is added with it --}}
+            </div>
+            <div class='card-body'>
+                <h3>{{name}}</h3>
+                <p>{{type}}</p>
+                <button class='btn' data-id='{{id}}'>delete</button>
+            </div>
     {{/each}}
 </div>
 <script src='/js/characters.js'></script>
