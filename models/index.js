@@ -33,11 +33,18 @@ Donomon.belongsTo(User, {
 });
 
 Donomon.belongsTo(DonomonType, {
-    foreignKey: '',
+    foreignKey: 'donomon_type_id',
 });
 
 DonomonType.hasMany(Donomon, {
-    foreignKey: '',
+    foreignKey: 'donomon_type_id',
 });
 
-module.exports = { Question, Answer, QuestionAnswer, User, Donomon, DonomonType };
+module.exports = {
+    Question,
+    Answer,
+    QuestionAnswer,
+    User,
+    Donomon,
+    DonomonType,
+};

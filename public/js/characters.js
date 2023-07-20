@@ -2,18 +2,22 @@ const newFormHandler = async function (event) {
     event.preventDefault();
 
     // const name = document.getElementById('name').value;
-    const type = document.getElementById('type').value;
+    const donomonTypeId = document.getElementById('type').value;
 
-    await fetch('/api/character', {
+    const response = await fetch('/api/donomons', {
         method: 'POST',
         body: JSON.stringify({
             // name,
-            type,
+            donomonTypeId,
         }),
         headers: { 'Content-Type': 'application/json' },
     });
 
-    document.location.reload();
+    if (response.ok) {
+        document.location.reload();
+    } else {
+        // handle error
+    }
 };
 
 document

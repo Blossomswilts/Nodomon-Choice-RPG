@@ -17,7 +17,7 @@ const hbs = exphbs.create({ helpers });
 const sess = {
     secret: 'Super secret secret',
     cookie: {
-        maxAge: 300000,
+        maxAge: 60 * 60 * 1000, //increase time copy from mini project
         httpOnly: true,
         secure: false,
         sameSite: 'strict',

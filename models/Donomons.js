@@ -13,27 +13,19 @@ Donomon.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        type: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         level: {
             type: DataTypes.INTEGER,
-            DEFAULT: 1,
+            defaultValue: 1,
             allowNull: false,
         },
         exp: {
             type: DataTypes.INTEGER,
-            DEFAULT: 0,
+            defaultValue: 0,
             allowNull: false,
         },
         morality: {
             type: DataTypes.INTEGER,
-            DEFAULT: 0,
+            defaultValue: 0,
             allowNull: false,
         },
         userId: {
