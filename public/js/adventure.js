@@ -1,5 +1,7 @@
 // Get references to the dropdown and locations list elements
 const dropdown = document.querySelector('#dropdown');
+
+// ** Need to figure out what location list is ******************** (Please correct this and delete comment)
 const locationsList = document.querySelector('ul');
 
 // Add an event listener to the dropdown element
