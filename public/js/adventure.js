@@ -2,6 +2,13 @@
 const dropdown = document.querySelector('#dropdown');
 const locationsList = document.querySelector('ul');
 
+// Get elements of the WebSocket chat
+const sendBtn = document.querySelector('#send');
+const messages = document.querySelector('#messages');
+const messageBox = document.querySelector('#messageBox');
+
+let ws;
+
 // Add an event listener to the dropdown element
 dropdown.addEventListener('change', (event) => {
     // Get the selected value from the dropdown
@@ -9,21 +16,21 @@ dropdown.addEventListener('change', (event) => {
 
     // Update the locations list based on the selected value
     if (selectedValue === 'Questions') {
-    // If the selected value is "Questions", show the questions
+        // If the selected value is "Questions", show the questions
         locationsList.innerHTML = `
       <li></li>
       <li></li>
       <li></li>
     `;
     } else if (selectedValue === 'Answers') {
-    // If the selected value is "Answers", show the answers
+        // If the selected value is "Answers", show the answers
         locationsList.innerHTML = `
       <li></li>
       <li></li>
       <li></li>
     `;
     } else if (selectedValue === 'Next Evolve') {
-    // If the selected value is "Next Evolve", show the next evolve options
+        // If the selected value is "Next Evolve", show the next evolve options
         locationsList.innerHTML = `
       <li></li>
       <li></li>
@@ -31,7 +38,6 @@ dropdown.addEventListener('change', (event) => {
     `;
     }
 });
-
 
 // Unhide answers that go with the appropriate questions
 let allAnswers = document.querySelectorAll('option[data-qid]');
@@ -44,3 +50,39 @@ allAnswers.forEach((ans) => {
         ans.style.display = 'block';
     }
 });
+
+// Starts and configures chat upon startup
+(function () {
+    function showMessage(message) {
+        messages.textContent += `\n\n${message}`;
+        messages.scrollTop = messages.scrollHeight;
+        messageBox.value = '';
+    }
+
+    function init() {
+        if (ws) {
+            ws.onerror = ws.onopen = ws.onclose = null;
+            ws.close();
+        }
+        ws = new WebSocket('ws://');
+        ws.onopen = () => {
+            console.log('Connection opened');
+        };
+        ws.onmessage = ({ data }) => showMessage(data);
+        ws.onclose = function() {
+            ws = null;
+        };
+    }
+
+    sendBtn.onclick = function() {
+        if (!ws) {
+            showMessage('No WebSocket connection');
+            return;
+        }
+
+        ws.send(messageBox.value);
+        showMessage(messageBox.value);
+    };
+
+    init();
+})();
