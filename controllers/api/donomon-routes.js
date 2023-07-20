@@ -9,8 +9,8 @@ router.post('/', async (req, res) => {
         });
 
         res.end();
-    } catch (e) {
-        //finish catch block !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    } catch (err) {
+        res.status(500).json(err);
     }
 });
 
