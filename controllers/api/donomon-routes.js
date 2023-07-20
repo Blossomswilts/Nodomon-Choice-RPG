@@ -14,4 +14,19 @@ router.post('/', async (req, res) => {
     }
 });
 
+// Delete a donomon by its `id` value (for characters page)
+router.delete('/:id', async (req, res) => {
+    try {
+        await Donomon.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+
+        res.end();
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
