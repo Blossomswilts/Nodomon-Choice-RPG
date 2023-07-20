@@ -16,7 +16,7 @@ const newFormHandler = async function (event) {
     if (response.ok) {
         document.location.reload();
     } else {
-        // handle error
+        alert(response.statusText);
     }
 };
 
