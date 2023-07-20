@@ -1,33 +1,31 @@
 <!-- adventure.handlebars -->
  <h1>Adventure</h1>
-  <img src="" alt="">
+ {{!-- selected text depending on active donomon --}}
+  
+  {{!-- drop down to select active donomon --}}
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Choose active donomon
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      {{#each donomons}}
+        <li><a class="dropdown-item" href="#" data-id="{{id}}">{{name}}</a></li>
+      {{/each}}
+    </ul>
+  </div>
 
-{{#each questions}}
-<section class="questions-ex"  data-id="{{id}}">
-    <h2>{{text}}</h2>
-
-    <select id="let's play">
-        {{#each answers}}
-            <option 
-                value="{{answerValue}}"
-                data-qid="{{questionId}}"
-                data-aid="{{answerId}}"
-                style="display:none;">
-                {{answerValue}}
-            </option>
-
-        {{/each}}
-
-    </select>
-</section>
-{{/each questions}}
-  <optgroup label="Next Evolve">
-    {{#each nextEvolve}}
-      <option value="{{this}}">{{this}}</option>
-    {{/each}}
-  </optgroup>
-</select>
-
+{{#each random}}
+            {{!-- get questions from question-routes
+            and all of the associated answers --}}
+            <div class="question">
+                <h2>{{this.question}}</h2>
+                <div class="answers">
+                    {{#each this.answers}}
+                        <button class="answer" data-id="{{this.id}}">{{this.answer}}</button>
+                    {{/each}}
+                </div>
+            
+{{/each}}
 
 
 

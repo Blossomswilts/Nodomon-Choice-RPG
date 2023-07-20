@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Answer, Question, QuestionAnswer } = require('../../models');
 const sequelize = require('../../config/connection');
 
-const withAuth = require('../utils/auth');
+const withAuth = require('../../utils/auth');
 router.get('/random', withAuth, async (req, res) => {
     const randomQuestion = (
         await Question.findAll({
