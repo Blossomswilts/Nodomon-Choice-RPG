@@ -29,13 +29,19 @@ router.get('/characters', withAuth, async (req, res) => {
         types,
     });
 });
-
-router.get(
-    '/adventure',
-    /*withAuth, */ async (req, res) => {
-        res.render('adventure');
-    },
-);
+router.get('/adventure', withAuth, async (req, res) => {
+    res.render('adventure');
+});
+router.get('/profile', withAuth, async (req, res) => {
+    const donomonData = await Donomon.findAll({
+        where: {
+            userId: req.session.userId,
+        },
+    });
+    const donomons = donomonData.map((donomon) => donomon.get({ plain: true }));
+    const username = req.session.username;
+    res.render('profile', { donomons, username });
+});
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
