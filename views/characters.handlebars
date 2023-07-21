@@ -1,7 +1,6 @@
 <div class='new character'>
     <div class='character'>
         <h2>create new character</h2>
-    </div>
     <form id='new-character' class='card-body'>
         {{! <label class='character' for='name'>name</label>
         <input id='name' type='text' name='name' class='form-input' /> }}
@@ -13,6 +12,9 @@
         </select>
         <button id='submit' type='submit' class='btn'>create</button>
     </form>
+    </div>
+</div>
+<div class='character-party'>
     <h2>Your party</h2>
     {{#each donomons}}
         {{!-- make a card bootstrap for each donomon --}}
@@ -27,5 +29,6 @@
                 <button class='btn' data-id='{{id}}'>delete</button>
             </div>
     {{/each}}
+    </div>
 </div>
 <script src='/js/characters.js'></script>
