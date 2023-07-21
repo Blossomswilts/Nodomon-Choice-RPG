@@ -8,24 +8,23 @@
       Choose active donomon
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-      {{#each profile.donomons}}
-        <li><a class="dropdown-item" href="#" data-id="{{id}}">{{name}}</a></li>
+      {{#each donomons}}
+        <li><a class="dropdown-item" href="#" data-id="{{id}}">{{donomontype.name}}</a></li>
       {{/each}}
     </ul>
   </div>
-
-{{#each questions}}
+            <h2>QUESTION</h2>
             {{!-- get questions from question-routes
             and all of the associated answers --}}
             <div class="question">
-                <h2>{{this.question}}</h2>
-                <div class="answers">
-                    {{#each this.answers}}
-                        <button class="answer" data-id="{{this.id}}">{{this.answer}}</button>
-                    {{/each}}
+                <h2 id="questionText"></h2>
+                <div id="answersText">
+                        <button id="answer1"></button>
+                        <button id="answer2"></button>
+                        <button id="answer3"></button>
+                        <button id="answer4"></button>
                 </div>
             </div>    
-{{/each}}
 
 {{!-- Empty rectangle for world chat using WebSocket using bootstrap --}}
 <div class="chat">
