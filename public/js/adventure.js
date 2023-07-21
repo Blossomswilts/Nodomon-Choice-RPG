@@ -35,17 +35,13 @@ async function setActiveDonomon(donomonId) {
         alert(response.statusText);
     }
 }
+
 //___________________________________________________________Active Donomon___________________________________________________________
-const User = {
-    activeDonomonId: null,
-};
 const dropDownItems = document.querySelectorAll('.donomonSelect');
 
 dropDownItems.forEach((item) => {
-    item.addEventListener('click', (event) => {
-        event.preventDefault();
+    item.addEventListener('click', () => {
         const donomonId = item.dataset.id;
-        User.activeDonomonId = donomonId;
         setActiveDonomon(donomonId);
     });
 });

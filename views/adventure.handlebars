@@ -1,7 +1,17 @@
 <!-- adventure.handlebars -->
  <h1>Adventure</h1>
- {{!-- set image with link to public folder which changes based on active name --}}
- {{!-- selected text depending on active donomon --}}
+ {{!-- get active donomon from user route and call information from donomon table --}}
+ <h2>Active Donomon</h2>
+  <div class="activeDonomon">
+      <div class="activeDonomonImage">
+          <img src="{{activeDonomon.donomons.name}}.png" alt="active donomon image">
+      </div>
+      <div class="activeDonomonInfo">
+          <p id="activeLevel"></p>
+          <p id="activeExp"></p>
+          <p id="activeMorality"></p>
+      </div>
+
   
   {{!-- drop down to select active donomon --}}
   <div class="dropdown">

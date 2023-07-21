@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Donomon, User } = require('../../models');
 
 // Sign up route
 router.post('/', async (req, res) => {
@@ -77,10 +77,13 @@ router.put('/active/:id', async (req, res) => {
                 },
             },
         );
+        const activeDonomon = await Donomon.findByPk(
+            req.session.activeDonomonId,
+        );
         //save to session
         req.session.save(() => {
             req.session.activeDonomonId = req.params.id;
-            res.end();
+            res.json(activeDonomon.get({ plain: true }));
         });
     } catch (err) {
         res.status(500).json(err);

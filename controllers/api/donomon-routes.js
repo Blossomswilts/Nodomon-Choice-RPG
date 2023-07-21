@@ -29,6 +29,22 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Get a single donomon by its `id` value from session activeDonomonId and get donomon table values
+router.get('/active/:id', async (req, res) => {
+    try {
+        const activeDonomon = await Donomon.findOne({
+            where: {
+                id: req.session.activeDonomonId,
+            },
+        });
+
+        res.json(activeDonomon);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
 // Delete a donomon by its `id` value (for characters page)
 router.delete('/:id', async (req, res) => {
     try {
@@ -44,48 +60,5 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-router.get('/', async (req, res) => {
-    try {
-        const activeDonomon = await Donomon.findOne({
-            where: {
-                id: req.session.activeDonomonId,
-            },
-        });
-
-        res.json(activeDonomon);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-// update active donomon's level, exp and morality when an answer is selected with the points from the answer
-// router.put('/active/:points', async (req, res) => {
-//     try {
-//         const activeDonomon = await Donomon.findOne({
-//             where: {
-//                 id: req.session.activeDonomonId,
-//             },
-//         });
-
-//         const newExp = activeDonomon.exp + req.params.exp;
-//         const morality = activeDonomon.morality + req.params.morality;
-
-//         await Donomon.update(
-//             {
-//                 exp: newExp,
-//                 morality: morality,
-//             },
-//             {
-//                 where: {
-//                     id: req.session.activeDonomonId,
-//                 },
-//             }
-//         );
-
-//         res.end();
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
 
 module.exports = router;
