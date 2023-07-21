@@ -1,34 +1,39 @@
 <div class='new character'>
     <div class='character'>
         <h2>create new character</h2>
-    <form id='new-character' class='card-body'>
-        {{! <label class='character' for='name'>name</label>
+        <form id='new-character' class='card-body'>
+            {{! <label class='character' for='name'>name</label>
         <input id='name' type='text' name='name' class='form-input' /> }}
-        <label class='form-character' for='type'>Nodomon</label>
-        <select name='type' id='type'>
-            {{#each types}}
-                <option value='{{id}}'>{{name}}</option>
-            {{/each}}
-        </select>
-        <button id='submit' type='submit' class='btn'>create</button>
-    </form>
+            <label class='form-character' for='type'>Nodomon</label>
+            <select name='type' id='type'>
+                {{#each types}}
+                    <option value='{{id}}'>{{name}}</option>
+                {{/each}}
+            </select>
+            <button id='submit' type='submit' class='btn'>create</button>
+        </form>
     </div>
 </div>
 <div class='character-party'>
     <h2>Your party</h2>
     {{#each donomons}}
-        {{!-- make a card bootstrap for each donomon --}}
+        {{! make a card bootstrap for each donomon }}
         <div class='card'>
             <div class='card-body'>
-                <img src='{{name}}' alt='{{name}}' /> 
-                {{!-- make sure the image type is added with it --}}
+                <img src='/images/nodomon/{{donomontype.name}}.png' alt='{{donomontype.name}}' />
+                {{! make sure the image type is added with it }}
             </div>
             <div class='card-body'>
-                <h3>{{name}}</h3>
-                <p>{{type}}</p>
-                <button class='btn' data-id='{{id}}'>delete</button>
+                <h3>{{donomontype.name}}</h3>
+                <p>{{donomontype.type}}</p>
+                <p>{{level}}</p>
+                <p>{{exp}}</p>
+                <button
+                    class='btn deleteDonomon'
+                    data-id='{{id}}'
+                >delete</button>
             </div>
+        </div>
     {{/each}}
-    </div>
 </div>
 <script src='/js/characters.js'></script>

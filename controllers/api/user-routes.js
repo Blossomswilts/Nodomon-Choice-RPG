@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Donomon, User } = require('../../models');
 
 // Sign up route
 router.post('/', async (req, res) => {
@@ -51,6 +51,7 @@ router.post('/login', async (req, res) => {
             req.session.loggedIn = true;
             req.session.userId = dbUserData.dataValues.id;
             req.session.username = dbUserData.dataValues.name;
+            req.session.activeDonomonId = dbUserData.dataValues.activeDonomonId;
             res.status(200).json({
                 user: dbUserData,
                 message: 'You are now logged in!',
@@ -58,6 +59,33 @@ router.post('/login', async (req, res) => {
         });
     } catch (err) {
         console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+//___________________________________________________________Active Donomon Setup___________________________________________________________
+//in user model, set activeDonomonId to the id of the donomon that was clicked
+router.put('/active/:id', async (req, res) => {
+    try {
+        await User.update(
+            {
+                activeDonomonId: req.params.id,
+            },
+            {
+                where: {
+                    id: req.session.userId,
+                },
+            },
+        );
+        const activeDonomon = await Donomon.findByPk(
+            req.session.activeDonomonId,
+        );
+        //save to session
+        req.session.save(() => {
+            req.session.activeDonomonId = req.params.id;
+            res.json(activeDonomon.get({ plain: true }));
+        });
+    } catch (err) {
         res.status(500).json(err);
     }
 });
