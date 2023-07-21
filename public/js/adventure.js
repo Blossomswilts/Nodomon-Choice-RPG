@@ -17,7 +17,7 @@ let ws;
             ws.onerror = ws.onopen = ws.onclose = null;
             ws.close();
         }
-        ws = new WebSocket('ws://localhost:3001');
+        ws = new WebSocket('ws://localhost:6969');
         ws.onopen = () => {
             console.log('Connection opened');
         };
