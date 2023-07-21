@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const server = http.createServer(express);
-const wss = WebSocket.Server({ server });
+const wss = new WebSocket.Server({ server });
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
