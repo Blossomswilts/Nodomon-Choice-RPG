@@ -1,5 +1,6 @@
 <!-- adventure.handlebars -->
  <h1>Adventure</h1>
+ {{!-- set image with link to public folder which changes based on active name --}}
  {{!-- selected text depending on active donomon --}}
   
   {{!-- drop down to select active donomon --}}
@@ -7,9 +8,9 @@
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
       Choose active donomon
     </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <ul class="dropdown-menu donomonSelection" aria-labelledby="dropdownMenuButton1">
       {{#each donomons}}
-        <li><a class="dropdown-item" href="#" data-id="{{id}}">{{donomontype.name}}</a></li>
+        <li><a class="dropdown-item donomonSelect" href="#" data-id="{{id}}">{{donomontype.name}} - {{level}}</a></li>
       {{/each}}
     </ul>
   </div>

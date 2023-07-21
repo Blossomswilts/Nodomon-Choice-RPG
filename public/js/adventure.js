@@ -22,6 +22,33 @@ async function getRandomQuestion() {
     }
 }
 
+//On dropdown of donomon, set active donomon to the donomon that was clicked
+async function setActiveDonomon(donomonId) {
+    const response = await fetch(`/api/users/active/${donomonId}`, {
+        method: 'PUT',
+    });
+
+    if (response.ok) {
+        const donomon = await response.json();
+        render(donomon);
+    } else {
+        alert(response.statusText);
+    }
+}
+//___________________________________________________________Active Donomon___________________________________________________________
+const User = {
+    activeDonomonId: null,
+};
+const dropDownItems = document.querySelectorAll('.donomonSelect');
+
+dropDownItems.forEach((item) => {
+    item.addEventListener('click', (event) => {
+        event.preventDefault();
+        const donomonId = item.dataset.id;
+        User.activeDonomonId = donomonId;
+        setActiveDonomon(donomonId);
+    });
+});
 
 
 getRandomQuestion();
