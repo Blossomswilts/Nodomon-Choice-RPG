@@ -1,31 +1,41 @@
 <!-- adventure.handlebars -->
  <h1>Adventure</h1>
- {{!-- selected text depending on active donomon --}}
+ {{!-- get active donomon from user route and call information from donomon table --}}
+ <h2>Active Donomon</h2>
+  <div class="activeDonomon">
+      <div class="activeDonomonImage">
+          <img src="{{activeDonomon.donomons.name}}.png" alt="active donomon image">
+      </div>
+      <div class="activeDonomonInfo">
+          <p id="activeLevel"></p>
+          <p id="activeExp"></p>
+          <p id="activeMorality"></p>
+      </div>
+
   
   {{!-- drop down to select active donomon --}}
   <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
       Choose active donomon
     </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-      {{#each profile.donomons}}
-        <li><a class="dropdown-item" href="#" data-id="{{id}}">{{name}}</a></li>
+    <ul class="dropdown-menu donomonSelection" aria-labelledby="dropdownMenuButton1">
+      {{#each donomons}}
+        <li><a class="dropdown-item donomonSelect" href="#" data-id="{{id}}">{{donomontype.name}} - {{level}}</a></li>
       {{/each}}
     </ul>
   </div>
-
-{{#each questions}}
+            <h2>QUESTION</h2>
             {{!-- get questions from question-routes
             and all of the associated answers --}}
             <div class="question">
-                <h2>{{this.question}}</h2>
-                <div class="answers">
-                    {{#each this.answers}}
-                        <button class="answer" data-id="{{this.id}}">{{this.answer}}</button>
-                    {{/each}}
+                <h2 id="questionText"></h2>
+                <div id="answersText">
+                        <button id="answer1"></button>
+                        <button id="answer2"></button>
+                        <button id="answer3"></button>
+                        <button id="answer4"></button>
                 </div>
             </div>    
-{{/each}}
 
 <h1>World Chat</h1>
 <pre id="messages" style="overflow: scroll"></pre>
