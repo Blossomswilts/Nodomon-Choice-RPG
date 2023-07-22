@@ -1,6 +1,11 @@
 const router = require('express').Router();
 const { Donomon, DonomonType } = require('../models');
 const withAuth = require('../utils/auth');
+const http = require('http');
+const WebSocket = require('ws');
+
+const server = http.createServer(express);
+const wss = new WebSocket.Server({ server });
 
 router.get('/', async (req, res) => {
     res.render('homepage');
@@ -47,6 +52,19 @@ router.get('/adventure', withAuth, async (req, res) => {
     const { donomons } = await retrieveDonomons(req.session.userId, true);
     res.render('adventure', {
         donomons,
+    });
+});
+
+// Websocket connection for receiving messages from the client
+router.get('/chat', async (req, res) =>{
+    wss.on('connection', function connection(ws) {
+        ws.on('message', function incoming(data) {
+            wss.clients.forEach(function each(client) {
+                if (client !== ws && client.readyState === WebSocket.OPEN) {
+                    client.send(data);
+                }
+            });
+        });
     });
 });
 
