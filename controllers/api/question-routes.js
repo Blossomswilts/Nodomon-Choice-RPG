@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const { Answer, Question, QuestionAnswer } = require('../../models');
+const { Answer, Question, QuestionAnswer, Donomon } = require('../../models');
 const sequelize = require('../../config/connection');
 
 const withAuth = require('../../utils/auth');
+const { levelUp } = require('../../utils/helpers');
 router.get('/random', withAuth, async (req, res) => {
     const randomQuestion = (
         await Question.findAll({
@@ -25,4 +26,29 @@ router.get('/random', withAuth, async (req, res) => {
     const randomQuestionPlain = randomQuestion.get({ plain: true });
     res.json(randomQuestionPlain);
 });
+
+//get answer values from questionanswer table and update donomon
+router.get('/:questionId/answers/:answerId', async (req, res) => {
+    try {
+        const answerData = await QuestionAnswer.findOne({
+            where: {
+                questionId: req.params.questionId,
+                answerId: req.params.answerId
+            }
+        });
+        const donomon = await Donomon.findByPk(req.session.activeDonomonId);
+        const donomonPlain = donomon.get({ plain: true });
+        donomonPlain.morality += answerData.answerValue;
+        donomonPlain.exp += answerData.experience;
+        const updatedDonomon = levelUp(donomonPlain);
+        await Donomon.update(updatedDonomon, {
+            where: { id: req.session.activeDonomonId,}, // Specify the Donomon to update using the where clause
+        });
+        res.end();
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
 module.exports = router;

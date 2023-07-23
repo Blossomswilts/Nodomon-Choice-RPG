@@ -90,6 +90,18 @@ router.put('/active/:id', async (req, res) => {
     }
 });
 
+//get active donomon id from user table
+router.get('/active', async (req, res) => {
+    try {
+        const activeDonomon = await User.findByPk(req.session.userId);
+        res.status(200).json(activeDonomon);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
+
 // Logout route
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
