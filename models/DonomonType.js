@@ -13,13 +13,10 @@ DonomonType.init(
             primaryKey: true,
             autoIncrement: true,
         },
-
-        // Name of the Donomon
         name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-
         // Type of the Donomon
         type: {
             type: DataTypes.STRING,
