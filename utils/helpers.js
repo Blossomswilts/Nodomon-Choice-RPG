@@ -261,10 +261,11 @@ const levelUp = async (donomon) => {
         },
         {
             where: {
-                id: donomonId,
+                id: donomon.id,
             },
         },
     );
+    return { ...donomon, level };
 };
 
 exports.levelUp = levelUp;

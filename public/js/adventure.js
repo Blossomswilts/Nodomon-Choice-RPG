@@ -24,49 +24,21 @@ async function getRandomQuestion() {
 
 //update donomon experience and morality by adding in the answer's experience and morality
 async function updateDonomon(answerId, questionId) {
-    const response = await fetch(`/api/questions/${questionId}/answers/${answerId}`, {
-        method: 'GET',
-    });
+    try {
+        const response = await fetch(
+            `/api/questions/${questionId}/answers/${answerId}`,
+            {
+                method: 'GET',
+            },
+        );
 
-    if (response.ok) {
-        const answer = await response.json();
-        //get donomon id user table activeDonomonId
-        const activeDonomon = await fetch('/api/users/active', {
-            method: 'GET',
-        });
-        //get donomon from db
-        const donomonResponse = await fetch(`/api/donomons/${activeDonomon}`, {
-            method: 'GET',
-        });
-
-        if (donomonResponse.ok) {
-            levelUp(donomonId);
-            const donomon = await donomonResponse.json();
-            const newExperience = donomon.experience + answer.experience;
-            const newMorality = donomon.morality + answer.answerValue;
-            //call helper function levelUp
-            const donomonUpdateResponse = await fetch(`/api/donomons/${donomonId}`, {
-                method: 'PUT',
-                body: JSON.stringify({
-                    experience: newExperience,
-                    morality: newMorality,
-                }),
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-
-            if (donomonUpdateResponse.ok) {
-                const donomon = await donomonUpdateResponse.json();
-                render(donomon);
-            } else {
-                alert(donomonUpdateResponse.statusText);
-            }
+        if (response.ok) {
+            return await response.json();
         } else {
-            alert(donomonResponse.statusText);
+            alert(response.statusText);
         }
-    } else {
-        alert(response.statusText);
+    } catch (err) {
+        console.log(err);
     }
 }
 
