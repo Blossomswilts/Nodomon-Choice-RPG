@@ -1,12 +1,24 @@
-const wss = new WebSocket('wss://localhost:3001');
-const send = document.getElementById('send');
-const messages = document.getElementById('messages').value;
-const text = document.getElementById('text').value;
+const webSocketsServerPort = 8000;
+const webSocketServer = require('websocket').server;
+const http = require('http');
 
-function sendMessage() {
-    wss.on('message', data => {
-        
-    })
+const server = http.createServer();
+server.listen(webSocketsServerPort);
+console.log('Listening on port 8000');
+
+const wsServer = new webSocketServer({
+    httpServer: Server
+});
+
+const clients = {};
+
+wsServer.on('request'), function (request) {
+    const connection = request.accept(null, request.origin);
+    clients[] = connection;
 }
 
-send.addEventListener('click', )
+connection.on('message', function(message) {
+    for(key in clients) {
+        clients.[key].sendUTF(message.utf8Data);
+    }
+});
