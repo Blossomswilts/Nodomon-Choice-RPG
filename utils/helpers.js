@@ -197,9 +197,7 @@ const evolve = async (donomon) => {
 };
 //___________________________________________________LEVEL UP FUNCTION_______________________________________________________
 // Level up function for Donomon
-const levelUp = async (donomonId) => {
-    // Find the donomon by id
-    const donomon = await Donomon.findByPk(donomonId);
+const levelUp = async (donomon) => {
     // Get current level and exp
     const exp = donomon.exp;
     let level = donomon.level;
@@ -253,6 +251,8 @@ const levelUp = async (donomonId) => {
             evolve(donomon);
             break;
         default:
+            donomon.level = level;
+            return donomon;
     }
     // Update the donomon with the new level
     await Donomon.update(
