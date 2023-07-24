@@ -24,7 +24,8 @@ This application is a full stack application, hosted through Heroku, and is acce
     - Sequelize: We had to learn how to use sequelize to create our database, and how to use it to create our models and associations. Within an application such as this, one of the challenges was learning how to associate relations between the tables, and how to use those associations to get the data we needed. 
     - Handlebars: We had to learn how to use handlebars to create our html pages, and how to use the data from our database to populate the pages with the information we needed. Some of the challenges was rendering proper data from the routes, so that the information we set was directed correctly. 
     - Express: We had to learn how to use express to create our routes, and how to use those routes to render the proper data to the handlebars pages and functions. Some of the challenges associated was ensuring that the proper data was passed through using the CRUD methods, and that the data was being rendered correctly with its associated functions.
-    - WebSocket: **For amy to fill in **
+    - WebSocket: We had to learn how to use WebSocket to create a live chat. Upon researching the API, we discovered that using WebSocket on it's own to create a live chat multiple players can connect to is incredibly complicated and isn't feasible within the time constraints of this project, so the library socket.io was utilized to streamline the process of making the chat accessible to all players and update every player connected.
+    
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
@@ -96,5 +97,5 @@ Github: [CaffeinatedJitterBug](https://github.com/CaffeinatedJitterBug)
     
 
 Email: michael.r.tranquillo@gmail.com
-Email: Amy's Email ****
+Email: itwallaby@gmail.com
 (ctrl+click to send email to this address with your default email client or copy and paste address into your email client)
