@@ -219,3 +219,8 @@
  #questionText {
   margin: 20px;
  }
+
+ .text-sizing p {
+  font-size: 30px;
+  margin-left: 10%;
+ }
