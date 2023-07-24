@@ -1,4 +1,4 @@
-<div class='new character'>
+<div class='new character container text-center'>
     <div class='character'>
         <h2>create new character</h2>
         <form id='new-character' class='card-body'>
@@ -14,7 +14,7 @@
     </form>
     </div>
 </div>
-<div class='character-party'>
+<div class='character-party container text-center'>
     <h2>Your party</h2>
     {{#each donomons}}
         {{! make a card bootstrap for each donomon }}
@@ -26,8 +26,9 @@
             <div class='card-body'>
                 <h3>{{donomontype.name}}</h3>
                 <p>{{donomontype.type}}</p>
-                <p>{{level}}</p>
-                <p>{{exp}}</p>
+                <p>Level: {{level}}</p>
+                <p>Exp: {{exp}}</p>
+                <p>Morality: {{morality}}</p>
                 <button
                     class='btn deleteDonomon'
                     data-id='{{id}}'
