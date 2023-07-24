@@ -172,10 +172,8 @@ const evolve = async (donomon) => {
 // Level up function for Donomon
 const levelUp = async (donomon) => {
     // Get current level and exp
-    // const exp = donomon.exp;
-    // let level = donomon.level;
-    let level = 8;
-    let exp = 70;
+    const exp = donomon.exp;
+    let level = donomon.level;
     // Increase the level by 1 at specific exp values
     switch (exp) {
         case 10:
