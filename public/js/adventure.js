@@ -1,4 +1,16 @@
 
+const socket = io('ws://localhost:8080');
+
+socket.on('message', text => {
+    const chatBody = document.querySelector('#chat-box');
+
+    chatBody.innerHTML = text;
+});
+
+document.querySelector('#sendBtn').onclick = () => {
+    const text = document.querySelector('#sendBtn').value;
+    socket.emit('message', text);
+};
 
 function render(question) {
     const questionEl = document.getElementById('questionText');

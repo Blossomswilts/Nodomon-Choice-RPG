@@ -41,6 +41,19 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(routes);
 
+const http = require('http').createServer();
+
+const io = require('socket.io')(http, {
+    cors: { origin: '*' }
+});
+
+io.on('connection', (socket) => {
+    socket.on('message', (message) => {
+        io.emit('message', `Placeholder: ${message}`);
+    });
+});
+
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
+    http.listen(8080, () => console.log('WebSocket listening on port 8080'));
 });

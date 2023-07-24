@@ -69,12 +69,12 @@ router.put('/active/:id', async (req, res) => {
     try {
         await User.update(
             {
-                activeDonomonId: req.params.id,
-            },
-            {
                 where: {
                     id: req.session.userId,
                 },
+            },
+            {
+                activeDonomonId: req.params.id,
             },
         );
         const activeDonomon = await Donomon.findByPk(
