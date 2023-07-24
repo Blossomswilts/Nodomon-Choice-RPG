@@ -1,3 +1,5 @@
+// import { io } from "socket.io-client";
+// const { io } = require("socket.io-client");
 const socket = io('ws://localhost:8080');
 
 socket.on('message', text => {

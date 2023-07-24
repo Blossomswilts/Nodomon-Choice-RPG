@@ -55,5 +55,5 @@ io.on('connection', (socket) => {
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
-    http.listen(8080, () => console.log('WebSocket listening on port 8080'));
+    http.listen(80, () => console.log('WebSocket listening on port 80'));
 });

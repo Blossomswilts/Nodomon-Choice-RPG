@@ -58,8 +58,4 @@ router.get('/login', (req, res) => {
     }
 });
 
-router.get('/chat', (req, res) => {
-    
-});
-
 module.exports = router;
