@@ -32,6 +32,7 @@ This application is a full stack application, hosted through Heroku, and is acce
 * [User Story](#user-story)
 * [Screenshots](#screenshots)
 * [License](#license)
+* [Credits](#credits)
 * [Questions](#questions)
 
 
@@ -44,7 +45,7 @@ You will need to run `npm install` which will install the necessary package depe
 ## Usage
 FOR TESTING PURPOSES
 In order to run the program, after obtaining all of the dependencies you will need to run;
-* run schema through mysql to create the database. mysql '-uroot <br db/schema.sql'
+* run schema through mysql to create the database. mysql '-uroot db/schema.sql'
 * `npm run seed` : this will populate the database with the data from the seed.sql file.
 * `npm start` : this will begin the program in your terminal, in which you can use localhost:3001 to access the web application. mysql workbench can be used to view the database.
 
@@ -81,6 +82,10 @@ SO THAT I can decide on what mon to work on next<br>
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Credits
+* [Michael Tranquillo](https://github.com/Blossomswilts)
+* [Amy Green](https://github.com/CaffeinatedJitterBug)
 
 ## Questions
 If you have any questions, or would like to show off some of your work, don't hesitate to message me through any of the following contacts!
