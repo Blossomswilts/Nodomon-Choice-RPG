@@ -120,7 +120,7 @@
   }
   
   .nav-item a {
-      color: var(--primary);
+      color: var(--dark);
   }
   
   .hero {
@@ -187,5 +187,40 @@
     cursor: pointer;
   }
   .btn:hover {
-    background-color: #3E8E41;
+    background-color: #00ff08;
   }
+
+  .logo {
+    width: 256px;
+    height: 256px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: -50px;
+  }
+
+  .card {
+    margin-bottom: 50px;
+    background-color: antiquewhite;
+  }
+
+  .question-section {
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 50px;
+    margin: 30px;
+  }
+
+ .question-text {
+  margin: 10px;
+  text-decoration: underline;
+  color: #49446d;
+ }
+
+ #questionText {
+  margin: 20px;
+ }
+
+ .text-sizing p {
+  font-size: 30px;
+  margin-left: 10%;
+ }
