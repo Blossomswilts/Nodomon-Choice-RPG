@@ -6,17 +6,6 @@ router.get('/', async (req, res) => {
     res.render('homepage');
 });
 
-router.get('/profile', withAuth, async (req, res) => {
-    const donomonData = await Donomon.findAll({
-        where: {
-            userId: req.session.userId,
-        },
-    });
-    const donomons = donomonData.map((donomon) => donomon.get({ plain: true }));
-    const username = req.session.username;
-    res.render('profile', { donomons, username });
-});
-
 const retrieveDonomons = async (userId, retrieveDonomons, retrieveTypes) => {
     const returnObj = {};
 
@@ -59,17 +48,6 @@ router.get('/adventure', withAuth, async (req, res) => {
     res.render('adventure', {
         donomons,
     });
-});
-
-router.get('/profile', withAuth, async (req, res) => {
-    const donomonData = await Donomon.findAll({
-        where: {
-            userId: req.session.userId,
-        },
-    });
-    const donomons = donomonData.map((donomon) => donomon.get({ plain: true }));
-    const username = req.session.username;
-    res.render('profile', { donomons, username });
 });
 
 router.get('/login', (req, res) => {
