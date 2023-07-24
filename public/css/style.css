@@ -198,3 +198,8 @@
     /* make bottom closer to next element */
     margin-bottom: -50px;
   }
+
+  .card {
+    margin-bottom: 50px;
+    background-color: antiquewhite;
+  }
