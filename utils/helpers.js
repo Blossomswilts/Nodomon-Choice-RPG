@@ -5,7 +5,7 @@ const evolve = async (donomon) => {
     // Get the name and morality
     const id = donomon.id;
     const morality = donomon.morality;
-    let donomonTypeId = donomon.donomonTypeId;
+    let donomonTypeId = donomon.donomon_type_id;
     // Evolve depending on name and morality
     switch (donomonTypeId) {
         //________________________Water Donomon________________________
@@ -15,16 +15,16 @@ const evolve = async (donomon) => {
             } else {
                 donomonTypeId = 2;
             }
-            await Donomon.update(
-                {
-                    donomonTypeId,
-                },
-                {
-                    where: {
-                        id,
-                    },
-                },
-            );
+            // await Donomon.update(
+            //     {
+            //         donomonTypeId,
+            //     },
+            //     {
+            //         where: {
+            //             id,
+            //         },
+            //     },
+            // );
             break;
         case 2:
             if (morality >= 0) {
@@ -32,16 +32,16 @@ const evolve = async (donomon) => {
             } else {
                 donomonTypeId = 4;
             }
-            await Donomon.update(
-                {
-                    donomonTypeId,
-                },
-                {
-                    where: {
-                        id,
-                    },
-                },
-            );
+            // await Donomon.update(
+            //     {
+            //         donomonTypeId,
+            //     },
+            //     {
+            //         where: {
+            //             id,
+            //         },
+            //     },
+            // );
             break;
         case 3:
             if (morality >= 0) {
@@ -49,16 +49,16 @@ const evolve = async (donomon) => {
             } else {
                 donomonTypeId = 6;
             }
-            await Donomon.update(
-                {
-                    donomonTypeId,
-                },
-                {
-                    where: {
-                        id,
-                    },
-                },
-            );
+            // await Donomon.update(
+            //     {
+            //         donomonTypeId,
+            //     },
+            //     {
+            //         where: {
+            //             id,
+            //         },
+            //     },
+            // );
             break;
         //________________________Fire Donomon________________________
         case 8:
@@ -67,16 +67,16 @@ const evolve = async (donomon) => {
             } else {
                 donomonTypeId = 9;
             }
-            await Donomon.update(
-                {
-                    donomonTypeId,
-                },
-                {
-                    where: {
-                        id,
-                    },
-                },
-            );
+            // await Donomon.update(
+            //     {
+            //         donomonTypeId,
+            //     },
+            //     {
+            //         where: {
+            //             id,
+            //         },
+            //     },
+            // );
             break;
         case 10:
             if (morality >= 0) {
@@ -84,16 +84,16 @@ const evolve = async (donomon) => {
             } else {
                 donomonTypeId = 12;
             }
-            await Donomon.update(
-                {
-                    donomonTypeId,
-                },
-                {
-                    where: {
-                        id,
-                    },
-                },
-            );
+            // await Donomon.update(
+            //     {
+            //         donomonTypeId,
+            //     },
+            //     {
+            //         where: {
+            //             id,
+            //         },
+            //     },
+            // );
             break;
         case 9:
             if (morality >= 0) {
@@ -101,16 +101,16 @@ const evolve = async (donomon) => {
             } else {
                 donomonTypeId = 11;
             }
-            await Donomon.update(
-                {
-                    donomonTypeId,
-                },
-                {
-                    where: {
-                        id,
-                    },
-                },
-            );
+            // await Donomon.update(
+            //     {
+            //         donomonTypeId,
+            //     },
+            //     {
+            //         where: {
+            //             id,
+            //         },
+            //     },
+            // );
             break;
         //________________________Grass Donomon_______________________
         case 15:
@@ -119,16 +119,16 @@ const evolve = async (donomon) => {
             } else {
                 donomonTypeId = 16;
             }
-            await Donomon.update(
-                {
-                    donomonTypeId,
-                },
-                {
-                    where: {
-                        id,
-                    },
-                },
-            );
+            // await Donomon.update(
+            //     {
+            //         donomonTypeId,
+            //     },
+            //     {
+            //         where: {
+            //             id,
+            //         },
+            //     },
+            // );
             break;
         case 17:
             if (morality >= 0) {
@@ -136,16 +136,16 @@ const evolve = async (donomon) => {
             } else {
                 donomonTypeId = 19;
             }
-            await Donomon.update(
-                {
-                    donomonTypeId,
-                },
-                {
-                    where: {
-                        id,
-                    },
-                },
-            );
+            // await Donomon.update(
+            //     {
+            //         donomonTypeId,
+            //     },
+            //     {
+            //         where: {
+            //             id,
+            //         },
+            //     },
+            // );
             break;
         case 16:
             if (morality >= 0) {
@@ -153,27 +153,30 @@ const evolve = async (donomon) => {
             } else {
                 donomonTypeId = 18;
             }
-            await Donomon.update(
-                {
-                    donomonTypeId,
-                },
-                {
-                    where: {
-                        id,
-                    },
-                },
-            );
+            // await Donomon.update(
+            //     {
+            //         donomonTypeId,
+            //     },
+            //     {
+            //         where: {
+            //             id,
+            //         },
+            //     },
+            // );
             break;
         default:
     }
-    return { ...donomon, donomonTypeId };
+    return donomonTypeId;
 };
 //___________________________________________________LEVEL UP FUNCTION_______________________________________________________
 // Level up function for Donomon
 const levelUp = async (donomon) => {
+    let donomonTypeId;
     // Get current level and exp
-    const exp = donomon.exp;
-    let level = donomon.level;
+    // const exp = donomon.exp;
+    const exp = 70;
+    // let level = donomon.level;
+    let level = 8;
     // Increase the level by 1 at specific exp values
     switch (exp) {
         case 10:
@@ -196,7 +199,7 @@ const levelUp = async (donomon) => {
             break;
         case 70:
             level = 8;
-            evolve(donomon);
+            donomonTypeId = await evolve(donomon);
             break;
         case 80:
             level = 9;
@@ -221,24 +224,26 @@ const levelUp = async (donomon) => {
             break;
         case 150:
             level = 16;
-            evolve(donomon);
+            donomonTypeId = await evolve(donomon);
             break;
         default:
-            donomon.level = level;
-            return donomon;
+        // donomon.level = level;
     }
-    // Update the donomon with the new level
-    await Donomon.update(
-        {
-            level,
-        },
-        {
-            where: {
-                id: donomon.id,
-            },
-        },
-    );
-    return { ...donomon, level, donomonTypeId: donomon.donomonTypeId };
+    donomon.level = level;
+    donomon.donomon_type_id = donomonTypeId;
+    return donomon;
+    // // Update the donomon with the new level
+    // await Donomon.update(
+    //     {
+    //         level,
+    //     },
+    //     {
+    //         where: {
+    //             id: donomon.id,
+    //         },
+    //     },
+    // );
+    // return { ...donomon, level, donomonTypeId: donomon.donomon_type_id };
 };
 
 exports.levelUp = levelUp;

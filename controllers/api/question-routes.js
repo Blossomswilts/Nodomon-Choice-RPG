@@ -46,8 +46,7 @@ router.get('/:questionId/answers/:answerId', async (req, res) => {
         await Donomon.update(updatedDonomon, {
             where: { id: req.session.activeDonomonId,},
         });
-        res.status(200).json(updatedDonomon);
-        res.end();
+        res.json(updatedDonomon);
     } catch (err) {
         res.status(500).json(err);
     }
