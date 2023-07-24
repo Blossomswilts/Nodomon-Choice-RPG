@@ -1,9 +1,9 @@
+const io = 'socket.io';
 
 const socket = io('ws://localhost:8080');
 
 socket.on('message', text => {
     const chatBody = document.querySelector('#chat-box');
-
     chatBody.innerHTML = text;
 });
 
