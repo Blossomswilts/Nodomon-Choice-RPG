@@ -1,20 +1,21 @@
 <!-- adventure.handlebars -->
  <h1 class="text-center">Adventure</h1>
  {{!-- get active donomon from user route and call information from donomon table --}}
+{{#if activeDonomon}}
  <h2 class="text-center">Active Donomon</h2>
   <div class="activeDonomon grid text-center">
       <div class="activeDonomonImage">
-          <img src="{{activeDonomon.donomons.name}}.png" alt="active donomon image">
+          <img src="/images/nodomon/{{activeDonomon.donomontype.name}}.png" alt="active donomon image">
       </div>
       <div class="activeDonomonInfo">
-          <p id="activeName"></p>
+          <p id="activeName">{{activeDonomon.donomontype.name}}</p>
           <p id="activeLevel"></p>
           <p id="activeExp"></p>
           <p id="activeMorality"></p>
       </div>
 </div>
+{{/if}}
 
-  
   {{!-- drop down to select active donomon --}}
   <section class="container">
     <h2 class="text-center">Select Active Donomon</h2>
@@ -31,8 +32,7 @@
     </section>
     <section class="question-section">
             <h2 class="text-center question-text">QUESTION</h2>
-            {{!-- get questions from question-routes
-            and all of the associated answers --}}
+            {{!-- get questions from question-routes and all of the associated answers --}}
             <div class="question grid text-center">
                 <h2 id="questionText"></h2>
                 <div id="answersText">
@@ -42,7 +42,9 @@
                         <button id="answer4" class="p-2"></button>
                 </div>
             </div>    
+    </section>
 
+{{!-- This needs to be worked on (currently does not work **) --}}
 <h1>World Chat</h1>
 <pre id="chat-box" style="overflow: scroll"></pre>
 <input type="text" id="message" placeholder="Type your message here">

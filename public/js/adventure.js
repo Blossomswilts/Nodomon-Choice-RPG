@@ -1,14 +1,14 @@
-const socket = io('ws://localhost:80');
+// const socket = io('ws://localhost:80');
 
-socket.on('message', text => {
-    const chatBody = document.querySelector('#chat-box');
-    chatBody.innerHTML = text;
-});
+// socket.on('message', text => {
+//     const chatBody = document.querySelector('#chat-box');
+//     chatBody.innerHTML = text;
+// });
 
-document.querySelector('#sendBtn').onclick = () => {
-    const text = document.querySelector('#sendBtn').value;
-    socket.emit('message', text);
-};
+// document.querySelector('#sendBtn').onclick = () => {
+//     const text = document.querySelector('#sendBtn').value;
+//     socket.emit('message', text);
+// };
 
 function render(question) {
     const questionEl = document.getElementById('questionText');
@@ -34,7 +34,7 @@ async function getRandomQuestion() {
     }
 }
 
-//update donomon experience and morality by adding in the answer's experience and morality
+//Update donomon on click of answer
 async function updateDonomon(answerId, questionId) {
     try {
         const response = await fetch(
@@ -61,8 +61,7 @@ async function setActiveDonomon(donomonId) {
     });
 
     if (response.ok) {
-        const donomon = await response.json();
-        render(donomon);
+        document.location.reload();
     } else {
         alert(response.statusText);
     }
@@ -109,4 +108,5 @@ answer4.addEventListener('click', () => {
     getRandomQuestion();
 });
 
+//Fix so that it only gets called if there is an active donomon*************************
 getRandomQuestion();
