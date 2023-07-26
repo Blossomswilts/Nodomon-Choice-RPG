@@ -14,7 +14,6 @@ const loginFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            // If successful, redirect the browser to the character page
             document.location.replace('/characters');
         } else {
             alert(response.statusText);

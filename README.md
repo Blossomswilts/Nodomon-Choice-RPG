@@ -51,7 +51,7 @@ In order to run the program, after obtaining all of the dependencies you will ne
 * `npm start` : this will begin the program in your terminal, in which you can use localhost:3001 to access the web application. mysql workbench can be used to view the database.
 
 FOR USER PURPOSES
-* Application link to deployed application: [Donomon Choice RPG]()
+* Application link to deployed application: [Donomon Choice RPG](https://fast-falls-73744-ec14a6e28f7d.herokuapp.com/)
 
 FOR DEVELOPER PURPOSES
 * Application link to github repository: [Donomon Choice RPG GitHub](https://github.com/Blossomswilts/Donomon-Choice-RPG)

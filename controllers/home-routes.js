@@ -45,8 +45,11 @@ router.get('/characters', withAuth, async (req, res) => {
 
 router.get('/adventure', withAuth, async (req, res) => {
     const { donomons } = await retrieveDonomons(req.session.userId, true);
+    // eslint-disable-next-line eqeqeq
+    const activeDonomon = donomons.find((donomon) => donomon.id == req.session.activeDonomonId);
     res.render('adventure', {
         donomons,
+        activeDonomon,
     });
 });
 

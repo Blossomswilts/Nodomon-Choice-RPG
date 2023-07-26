@@ -1,7 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// Create a table for questions answers value of answer and experience
 class QuestionAnswer extends Model {}
 
 QuestionAnswer.init(
