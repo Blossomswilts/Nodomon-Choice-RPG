@@ -37,7 +37,7 @@ async function getRandomQuestion() {
     }
 }
 
-//update donomon experience and morality by adding in the answer's experience and morality
+//Update donomon on click of answer
 async function updateDonomon(answerId, questionId) {
     try {
         const response = await fetch(
@@ -48,8 +48,10 @@ async function updateDonomon(answerId, questionId) {
         );
 
         if (response.ok) {
-            return await response.json();
+            // const data = await response.json();
+            //update dynamically.
         } else {
+            // change to bootstrap models
             alert(response.statusText);
         }
     } catch (err) {
@@ -64,8 +66,7 @@ async function setActiveDonomon(donomonId) {
     });
 
     if (response.ok) {
-        const donomon = await response.json();
-        render(donomon);
+        document.location.reload();
     } else {
         alert(response.statusText);
     }
@@ -112,4 +113,5 @@ answer4.addEventListener('click', () => {
     getRandomQuestion();
 });
 
+//Fix so that it only gets called if there is an active donomon*************************
 getRandomQuestion();

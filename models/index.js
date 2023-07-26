@@ -21,13 +21,11 @@ Answer.belongsToMany(Question, {
     as: 'question',
 });
 
-// Set up user to have many donomon (has many donomon)
 User.hasMany(Donomon, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
 });
 
-// Set up donomon to belong to user (belongs to user)
 Donomon.belongsTo(User, {
     foreignKey: 'user_id',
 });
