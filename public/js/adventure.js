@@ -1,14 +1,14 @@
-// const socket = io('ws://localhost:80');
+const socket = io('ws://localhost:80');
 
-// socket.on('message', text => {
-//     const chatBody = document.querySelector('#chat-box');
-//     chatBody.innerHTML = text;
-// });
+socket.on('message', text => {
+    const chatBody = document.querySelector('#chat-box');
+    chatBody.innerHTML = text;
+});
 
-// document.querySelector('#sendBtn').onclick = () => {
-//     const text = document.querySelector('#sendBtn').value;
-//     socket.emit('message', text);
-// };
+document.querySelector('#sendBtn').onclick = () => {
+    const text = document.querySelector('#sendBtn').value;
+    socket.emit('message', text);
+};
 
 function render(question) {
     const questionEl = document.getElementById('questionText');
@@ -45,8 +45,10 @@ async function updateDonomon(answerId, questionId) {
         );
 
         if (response.ok) {
-            return await response.json();
+            // const data = await response.json();
+            //update dynamically.
         } else {
+            // change to bootstrap models
             alert(response.statusText);
         }
     } catch (err) {
