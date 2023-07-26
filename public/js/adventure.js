@@ -1,12 +1,15 @@
-const socket = io('ws://localhost:80');
+//const io = require("socket.io-client");
+const socket = io('ws://localhost:8081');
 
 socket.on('message', text => {
     const chatBody = document.querySelector('#chat-box');
     chatBody.innerHTML = text;
 });
 
-document.querySelector('#sendBtn').onclick = () => {
-    const text = document.querySelector('#sendBtn').value;
+socket.on('broadcast', message => console.log(message));
+
+document.querySelector('#send').onclick = () => {
+    const text = document.querySelector('#message').value;
     socket.emit('message', text);
 };
 
