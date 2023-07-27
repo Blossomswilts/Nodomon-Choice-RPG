@@ -49,11 +49,11 @@ const io = require('socket.io')(http, {
 
 io.on('connection', (socket) => {
     socket.on('message', (message) => {
-        io.emit('message', `Placeholder: ${message}`);
+        io.emit('broadcast', `${socket.id.substr(0,2)} said ${message}`);
     });
 });
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
-    http.listen(80, () => console.log('WebSocket listening on port 80'));
+    http.listen(8081, () => console.log('WebSocket listening on port 8081'));
 });
