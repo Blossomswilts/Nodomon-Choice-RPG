@@ -47,8 +47,19 @@ async function updateDonomon(answerId, questionId) {
         );
 
         if (response.ok) {
-            // const data = await response.json();
             //update dynamically.
+            const donomon = await response.json();
+            const donomonName = document.getElementById('activeName');
+            const donomonImg = document.getElementById('activeImage');
+            const donomonLevel = document.getElementById('activeLevel');
+            const donomonExp = document.getElementById('activeExp');
+            const donomonMorality = document.getElementById('activeMorality');
+
+            donomonName.textContent = donomon.name;
+            donomonImg.setAttribute('src', `/images/nodomon/${donomon.name}.png`);
+            donomonLevel.textContent = donomon.level;
+            donomonExp.textContent = donomon.exp;
+            donomonMorality.textContent = donomon.morality;
         } else {
             // change to bootstrap models
             alert(response.statusText);

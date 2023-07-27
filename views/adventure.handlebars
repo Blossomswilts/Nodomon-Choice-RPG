@@ -5,7 +5,7 @@
  <h2 class="text-center">Active Donomon</h2>
   <div class="activeDonomon grid text-center">
       <div class="activeDonomonImage">
-          <img src="/images/nodomon/{{activeDonomon.donomontype.name}}.png" alt="active donomon image">
+          <img id="activeImage" src="/images/nodomon/{{activeDonomon.donomontype.name}}.png" alt="active donomon image">
       </div>
       <div class="activeDonomonInfo">
           <p id="activeName">{{activeDonomon.donomontype.name}}</p>
@@ -30,6 +30,7 @@
     </ul>
   </div>
     </section>
+    {{#if activeDonomon}}
     <section class="question-section">
             <h2 class="text-center question-text">QUESTION</h2>
             {{!-- get questions from question-routes and all of the associated answers --}}
@@ -43,6 +44,7 @@
                 </div>
             </div>    
     </section>
+    {{/if}}
 
 {{!-- This needs to be worked on (currently does not work **) --}}
 <h1>World Chat</h1>
