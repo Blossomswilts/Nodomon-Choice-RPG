@@ -55,11 +55,12 @@ async function updateDonomon(answerId, questionId) {
             const donomonExp = document.getElementById('activeExp');
             const donomonMorality = document.getElementById('activeMorality');
 
-            donomonName.textContent = donomon.name;
+            // get active donomon name from session
             donomonImg.setAttribute('src', `/images/nodomon/${donomon.name}.png`);
-            donomonLevel.textContent = donomon.level;
-            donomonExp.textContent = donomon.exp;
-            donomonMorality.textContent = donomon.morality;
+            donomonName.textContent = donomon.name;
+            donomonLevel.textContent = `Level : ${donomon.updatedDonomon.level}`;
+            donomonExp.textContent = `Exp : ${donomon.updatedDonomon.exp}`;
+            donomonMorality.textContent = `Morality : ${donomon.updatedDonomon.morality}`;
         } else {
             // change to bootstrap models
             alert(response.statusText);

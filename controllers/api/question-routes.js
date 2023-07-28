@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Answer, Question, QuestionAnswer, Donomon } = require('../../models');
+const { Answer, Question, QuestionAnswer, Donomon, DonomonType } = require('../../models');
 const sequelize = require('../../config/connection');
 
 const withAuth = require('../../utils/auth');
@@ -46,7 +46,14 @@ router.get('/:questionId/answers/:answerId', async (req, res) => {
         await Donomon.update(updatedDonomon, {
             where: { id: req.session.activeDonomonId,},
         });
-        res.json(updatedDonomon);
+        const donomonName = await Donomon.findOne({
+            attributes: ['donomontype.name'],
+            where: {id: req.session.activeDonomonId,},
+            include: DonomonType,
+        });
+        const donomonNewPlain = donomonName.get({ plain: true });
+        const name = donomonNewPlain.donomontype.name;
+        res.json({updatedDonomon, name});
     } catch (err) {
         res.status(500).json(err);
     }
