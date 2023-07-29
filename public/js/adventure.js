@@ -5,7 +5,7 @@ socket.on('message', text => {
     chatBody.innerHTML = text;
 });
 
-socket.on('broadcast', message => chatBody.innerHTML = message);
+//socket.on('broadcast', message => chatBody.innerHTML = message);
 
 document.querySelector('#send').onclick = () => {
     const text = document.querySelector('#message').value;
