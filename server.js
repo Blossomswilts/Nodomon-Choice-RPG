@@ -14,6 +14,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const WebPORT = process.env.PORT || 8081;
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
@@ -53,5 +54,5 @@ io.on('connection', (socket) => {
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
-    http.listen(8081, () => console.log('WebSocket listening on port 8081'));
+    http.listen(WebPORT, () => console.log('WebSocket listening'));
 });
