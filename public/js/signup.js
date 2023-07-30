@@ -1,4 +1,9 @@
-const { errorModal } = require('../../utils/helpers');
+const errorModal = async function (response) {
+    const error = await response.json();
+    const errorModal = document.getElementById('errorModalBody');
+    errorModal.innerHTML = error.message;
+    $('#errorModal').modal('show');
+};
 
 const signupFormHandler = async function (event) {
     event.preventDefault();

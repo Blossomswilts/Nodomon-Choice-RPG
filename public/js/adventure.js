@@ -1,6 +1,13 @@
 const socket = io('ws://localhost:8081');
 const chatBody = document.querySelector('#chat-box');
-const {errorModal} = require('../../utils/helpers');
+//error function
+const errorModal = async function (response) {
+    const error = await response.json();
+    const errorModal = document.getElementById('errorModalBody');
+    errorModal.innerHTML = error.message;
+    $('#errorModal').modal('show');
+};
+
 
 socket.on('message', text => {
     chatBody.innerHTML = text;
