@@ -6,6 +6,13 @@ const errorModal = async function (response) {
     const errorModal = document.getElementById('errorModalBody');
     errorModal.innerHTML = error.message;
     $('#errorModal').modal('show');
+
+    const closeButton = document.querySelector(
+        '#errorModal .modal-footer .btn-secondary',
+    );
+    closeButton.addEventListener('click', function () {
+        $('#errorModal').modal('hide');
+    });
 };
 
 
