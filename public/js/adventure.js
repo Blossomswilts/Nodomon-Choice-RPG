@@ -1,5 +1,6 @@
 const socket = io('ws://localhost:8081');
 const chatBody = document.querySelector('#chat-box');
+const {errorModal} = require('../../utils/helpers');
 
 socket.on('message', text => {
     chatBody.innerHTML = text;
@@ -32,7 +33,7 @@ async function getRandomQuestion() {
         const question = await response.json();
         render(question);
     } else {
-        alert(response.statusText);
+        errorModal(response.statusText);
     }
 }
 
@@ -62,8 +63,7 @@ async function updateDonomon(answerId, questionId) {
             donomonExp.textContent = `Exp : ${donomon.updatedDonomon.exp}`;
             donomonMorality.textContent = `Morality : ${donomon.updatedDonomon.morality}`;
         } else {
-            // change to bootstrap models
-            alert(response.statusText);
+            errorModal(response.statusText);
         }
     } catch (err) {
         console.log(err);
@@ -79,7 +79,7 @@ async function setActiveDonomon(donomonId) {
     if (response.ok) {
         document.location.reload();
     } else {
-        alert(response.statusText);
+        errorModal(response.statusText);
     }
 }
 

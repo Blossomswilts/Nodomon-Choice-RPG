@@ -1,3 +1,5 @@
+const { errorModal } = require('../../utils/helpers');
+
 const signupFormHandler = async function (event) {
     event.preventDefault();
 
@@ -18,7 +20,7 @@ const signupFormHandler = async function (event) {
     if (response.ok) {
         document.location.replace('/');
     } else {
-        alert('Failed to sign up');
+        errorModal(response.statusText);
     }
 };
 

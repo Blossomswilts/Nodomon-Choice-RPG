@@ -1,3 +1,5 @@
+const { errorModal } = require('../../utils/helpers');
+
 const logout = async () => {
     const response = await fetch('/api/users/logout', {
         method: 'POST',
@@ -8,7 +10,7 @@ const logout = async () => {
         alert('You are logged out!');
         document.location.replace('/login');
     } else {
-        alert(response.statusText);
+        errorModal(response.statusText);
     }
 };
 

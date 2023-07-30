@@ -1,4 +1,5 @@
 //___________________________________________________EVOLVE FUNCTION_______________________________________________________
+
 // Evolve function for Donomon
 const evolve = async (donomon) => {
     // Get the name and morality
@@ -137,4 +138,39 @@ const levelUp = async (donomon) => {
     return donomon;
 };
 
+//Create Model for error handling using bootstrap and response.statusText for error message which deletes after ok is clicked
+const errorModal = (response) => {
+    const modal = document.createElement('div');
+    modal.setAttribute('class', 'modal fade');
+    modal.setAttribute('id', 'errorModal');
+    modal.setAttribute('tabindex', '-1');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-labelledby', 'errorModalLabel');
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML = `
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                </button>
+            </div>
+            <div class="modal-body">
+                ${response.statusText}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+    `;
+    document.body.appendChild(modal);
+    $('#errorModal').modal('show');
+    $('#errorModal').on('hidden.bs.modal', function () {
+        $('#errorModal').remove();
+    });
+};
+
+exports.errorModal = errorModal;
 exports.levelUp = levelUp;

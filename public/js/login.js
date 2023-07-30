@@ -1,3 +1,5 @@
+const { errorModal } = require('../../utils/helpers');
+
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
@@ -16,7 +18,7 @@ const loginFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/characters');
         } else {
-            alert(response.statusText);
+            errorModal(response.statusText);
         }
     }
 };
@@ -38,7 +40,7 @@ const signupFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/characters');
         } else {
-            alert(response.statusText);
+            errorModal(response.statusText);
         }
     }
 };

@@ -1,3 +1,5 @@
+const { errorModal } = require('../../utils/helpers');
+
 const newFormHandler = async function (event) {
     event.preventDefault();
 
@@ -14,7 +16,7 @@ const newFormHandler = async function (event) {
     if (response.ok) {
         document.location.reload();
     } else {
-        alert(response.statusText);
+        errorModal(response.statusText);
     }
 };
 
@@ -35,7 +37,7 @@ const deleteFormHandler = async function (event) {
         if (response.ok) {
             document.location.reload();
         } else {
-            alert(response.statusText);
+            errorModal(response.statusText);
         }
     }
 };
