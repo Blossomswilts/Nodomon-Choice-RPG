@@ -16,7 +16,7 @@ const newFormHandler = async function (event) {
     if (response.ok) {
         document.location.reload();
     } else {
-        errorModal(response.statusText);
+        errorModal(response);
     }
 };
 
@@ -37,7 +37,7 @@ const deleteFormHandler = async function (event) {
         if (response.ok) {
             document.location.reload();
         } else {
-            errorModal(response.statusText);
+            errorModal(response);
         }
     }
 };

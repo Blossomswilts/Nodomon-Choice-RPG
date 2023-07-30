@@ -10,7 +10,7 @@ const logout = async () => {
         alert('You are logged out!');
         document.location.replace('/login');
     } else {
-        errorModal(response.statusText);
+        errorModal(response);
     }
 };
 

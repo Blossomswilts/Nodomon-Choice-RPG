@@ -33,7 +33,7 @@ async function getRandomQuestion() {
         const question = await response.json();
         render(question);
     } else {
-        errorModal(response.statusText);
+        errorModal(response);
     }
 }
 
@@ -63,7 +63,7 @@ async function updateDonomon(answerId, questionId) {
             donomonExp.textContent = `Exp : ${donomon.updatedDonomon.exp}`;
             donomonMorality.textContent = `Morality : ${donomon.updatedDonomon.morality}`;
         } else {
-            errorModal(response.statusText);
+            errorModal(response);
         }
     } catch (err) {
         console.log(err);
@@ -79,7 +79,7 @@ async function setActiveDonomon(donomonId) {
     if (response.ok) {
         document.location.reload();
     } else {
-        errorModal(response.statusText);
+        errorModal(response);
     }
 }
 
