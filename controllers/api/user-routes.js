@@ -17,7 +17,18 @@ router.post('/', async (req, res) => {
             res.status(200).json(newUserData);
         });
     } catch (err) {
-        res.status(500).json(err);
+        // error if email already exists and error if password is too short and error if name is too short
+        if (err.errors[0].type === 'unique violation') {
+            res.status(400).json({
+                message: 'Email already exists!',
+            });
+        } else if (err.errors[0].type === 'Validation error') {
+            res.status(400).json({
+                message: 'Password must be at least 8 characters long!',
+            });
+        } else {
+            res.status(500).json(err);
+        }
     }
 });
 

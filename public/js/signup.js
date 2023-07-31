@@ -33,7 +33,6 @@ const signupFormHandler = async function (event) {
         document.location.replace('/');
     } else {
         errorModal(response);
-
     }
 };
 
