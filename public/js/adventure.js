@@ -1,6 +1,6 @@
 const WebPORT = process.env.PORT || 8081;
 
-const socket = io('ws://process.env.PORT');
+const socket = io('ws://' + WebPORT);
 const chatBody = document.querySelector('#chat-box');
 
 socket.on('message', text => {

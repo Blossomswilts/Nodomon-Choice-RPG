@@ -4,6 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+
 const http = require('http').createServer();
 const io = require('socket.io')(http, {
     cors: { origin: '*' }
@@ -47,8 +48,11 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(routes);
 
 io.on('connection', (socket) => {
+    const username = fetch('/api/username', {
+        method: 'GET'
+    });
     socket.on('message', (message) => {
-        io.emit('broadcast', `${socket.id.substr(0,2)} said ${message}`);
+        io.emit('broadcast', `${username} said ${message}`);
     });
 });
 
