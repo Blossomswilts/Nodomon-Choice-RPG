@@ -1,5 +1,20 @@
 const socket = io('ws://localhost:8081');
 const chatBody = document.querySelector('#chat-box');
+//error function
+const errorModal = async function (response) {
+    const error = await response.json();
+    const errorModal = document.getElementById('errorModalBody');
+    errorModal.innerHTML = error.message;
+    $('#errorModal').modal('show');
+
+    const closeButton = document.querySelector(
+        '#errorModal .modal-footer .btn-secondary',
+    );
+    closeButton.addEventListener('click', function () {
+        $('#errorModal').modal('hide');
+    });
+};
+
 
 socket.on('message', text => {
     chatBody.innerHTML = text;
@@ -32,7 +47,7 @@ async function getRandomQuestion() {
         const question = await response.json();
         render(question);
     } else {
-        alert(response.statusText);
+        errorModal(response);
     }
 }
 
@@ -62,8 +77,7 @@ async function updateDonomon(answerId, questionId) {
             donomonExp.textContent = `Exp : ${donomon.updatedDonomon.exp}`;
             donomonMorality.textContent = `Morality : ${donomon.updatedDonomon.morality}`;
         } else {
-            // change to bootstrap models
-            alert(response.statusText);
+            errorModal(response);
         }
     } catch (err) {
         console.log(err);
@@ -79,7 +93,7 @@ async function setActiveDonomon(donomonId) {
     if (response.ok) {
         document.location.reload();
     } else {
-        alert(response.statusText);
+        errorModal(response);
     }
 }
 

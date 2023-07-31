@@ -5,7 +5,7 @@ const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 const { levelUp } = require('../../utils/helpers');
 
-//get random question
+//______________________GET RANDOM QUESTION______________________//
 router.get('/random', withAuth, async (req, res) => {
     const randomQuestion = (
         await Question.findAll({
@@ -29,7 +29,7 @@ router.get('/random', withAuth, async (req, res) => {
     res.json(randomQuestionPlain);
 });
 
-//get answer values from questionanswer table and update donomon
+//______________________UPDATE DONOMON WITH QUESTION VALUES______________________//
 router.get('/:questionId/answers/:answerId', async (req, res) => {
     try {
         const answerData = await QuestionAnswer.findOne({

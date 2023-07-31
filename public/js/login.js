@@ -1,3 +1,17 @@
+const errorModal = async function (response) {
+    const error = await response.json();
+    const errorModal = document.getElementById('errorModalBody');
+    errorModal.innerHTML = error.message;
+    $('#errorModal').modal('show');
+
+    const closeButton = document.querySelector(
+        '#errorModal .modal-footer .btn-secondary',
+    );
+    closeButton.addEventListener('click', function () {
+        $('#errorModal').modal('hide');
+    });
+};
+
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
@@ -16,7 +30,7 @@ const loginFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/characters');
         } else {
-            alert(response.statusText);
+            errorModal(response);
         }
     }
 };
@@ -38,7 +52,7 @@ const signupFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/characters');
         } else {
-            alert(response.statusText);
+            errorModal(response);
         }
     }
 };
