@@ -2,6 +2,21 @@ const WebPORT = process.env.PORT || 8081;
 
 const socket = io('ws://' + WebPORT);
 const chatBody = document.querySelector('#chat-box');
+//error function
+const errorModal = async function (response) {
+    const error = await response.json();
+    const errorModal = document.getElementById('errorModalBody');
+    errorModal.innerHTML = error.message;
+    $('#errorModal').modal('show');
+
+    const closeButton = document.querySelector(
+        '#errorModal .modal-footer .btn-secondary',
+    );
+    closeButton.addEventListener('click', function () {
+        $('#errorModal').modal('hide');
+    });
+};
+
 
 socket.on('message', text => {
     chatBody.innerHTML = text;
@@ -34,7 +49,7 @@ async function getRandomQuestion() {
         const question = await response.json();
         render(question);
     } else {
-        alert(response.statusText);
+        errorModal(response);
     }
 }
 
@@ -49,11 +64,22 @@ async function updateDonomon(answerId, questionId) {
         );
 
         if (response.ok) {
-            // const data = await response.json();
             //update dynamically.
+            const donomon = await response.json();
+            const donomonName = document.getElementById('activeName');
+            const donomonImg = document.getElementById('activeImage');
+            const donomonLevel = document.getElementById('activeLevel');
+            const donomonExp = document.getElementById('activeExp');
+            const donomonMorality = document.getElementById('activeMorality');
+
+            // get active donomon name from session
+            donomonImg.setAttribute('src', `/images/nodomon/${donomon.name}.png`);
+            donomonName.textContent = donomon.name;
+            donomonLevel.textContent = `Level : ${donomon.updatedDonomon.level}`;
+            donomonExp.textContent = `Exp : ${donomon.updatedDonomon.exp}`;
+            donomonMorality.textContent = `Morality : ${donomon.updatedDonomon.morality}`;
         } else {
-            // change to bootstrap models
-            alert(response.statusText);
+            errorModal(response);
         }
     } catch (err) {
         console.log(err);
@@ -69,7 +95,7 @@ async function setActiveDonomon(donomonId) {
     if (response.ok) {
         document.location.reload();
     } else {
-        alert(response.statusText);
+        errorModal(response);
     }
 }
 
