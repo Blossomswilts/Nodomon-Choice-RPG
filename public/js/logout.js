@@ -5,7 +5,6 @@ const logout = async () => {
     });
 
     if (response.ok) {
-        alert('You are logged out!');
         document.location.replace('/login');
     } else {
         errorModal(response);
