@@ -1,7 +1,8 @@
-const WebPORT =/*  process.env.PORT || */ 8081;
+const WebPORT =/*  process.env.PORT || */ 'localhost:8081';
 
 const socket = io('ws://' + WebPORT);
 const chatBody = document.querySelector('#chat-box');
+
 //error function
 const errorModal = async function (response) {
     const error = await response.json();
@@ -16,7 +17,6 @@ const errorModal = async function (response) {
         $('#errorModal').modal('hide');
     });
 };
-
 
 socket.on('message', text => {
     chatBody.innerHTML = text;

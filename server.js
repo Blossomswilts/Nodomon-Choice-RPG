@@ -7,7 +7,8 @@ const helpers = require('./utils/helpers');
 
 const http = require('http').createServer();
 const io = require('socket.io')(http, {
-    cors: { origin: '*' }
+    cors: { origin: '*' },
+    transports: ['websocket', 'polling'],
 });
 
 const sequelize = require('./config/connection');
@@ -35,11 +36,14 @@ const sess = {
     }),
 };
 
-app.use(session(sess));
+const sessionParser = session(sess);
+
+app.use(sessionParser);
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+io.engine.use(sessionParser);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -47,10 +51,13 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(routes);
 
+const wrap = middleware => (socket, next) => middleware(socket.request, {}, next);
+
+io.use(wrap());
+
+
 io.on('connection', (socket) => {
-    const username = fetch('/api/username', {
-        method: 'GET'
-    });
+    const username = sess.session.username;
     socket.on('message', (message) => {
         io.emit('broadcast', `${username} said ${message}`);
     });
