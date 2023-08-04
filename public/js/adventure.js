@@ -1,7 +1,16 @@
-const WebPORT =/*  process.env.PORT || */ 'localhost:8081';
+const WebPORT = 'https://frozen-cliffs-11727-ff4251073048-app.herokuapp.com/' || 'localhost:8081';
 
-const socket = io('ws://' + WebPORT);
+const connection = io('ws://' + WebPORT);
 const chatBody = document.querySelector('#chat-box');
+
+document.querySelector('#send').onclick = () => {
+    const text = document.querySelector('#message').value;
+    connection.emit('message', text);
+};
+
+connection.on('broadcast', (msg) => {
+    console.log('message: ' + msg);
+});
 
 //error function
 const errorModal = async function (response) {
@@ -16,17 +25,6 @@ const errorModal = async function (response) {
     closeButton.addEventListener('click', function () {
         $('#errorModal').modal('hide');
     });
-};
-
-socket.on('message', text => {
-    chatBody.innerHTML = text;
-});
-
-//socket.on('broadcast', message => chatBody.innerHTML = message);
-
-document.querySelector('#send').onclick = () => {
-    const text = document.querySelector('#message').value;
-    socket.emit('message', text);
 };
 
 function render(question) {
@@ -73,7 +71,10 @@ async function updateDonomon(answerId, questionId) {
             const donomonMorality = document.getElementById('activeMorality');
 
             // get active donomon name from session
-            donomonImg.setAttribute('src', `/images/nodomon/${donomon.name}.png`);
+            donomonImg.setAttribute(
+                'src',
+                `/images/nodomon/${donomon.name}.png`,
+            );
             donomonName.textContent = donomon.name;
             donomonLevel.textContent = `Level : ${donomon.updatedDonomon.level}`;
             donomonExp.textContent = `Exp : ${donomon.updatedDonomon.exp}`;
