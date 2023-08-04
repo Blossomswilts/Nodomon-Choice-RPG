@@ -53,13 +53,11 @@ app.use(routes);
 
 const wrap = middleware => (socket, next) => middleware(socket.request, {}, next);
 
-io.use(wrap());
-
+io.use(wrap(sessionParser));
 
 io.on('connection', (socket) => {
-    const username = sess.session.username;
     socket.on('message', (message) => {
-        io.emit('broadcast', `${username} said ${message}`);
+        io.emit('broadcast', `Player said ${message} ${socket.request.session}`);
     });
 });
 
