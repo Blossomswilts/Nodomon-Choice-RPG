@@ -1,4 +1,4 @@
-const WebPORT = process.env.PORT || 'localhost:8081';
+const WebPORT = 'https://frozen-cliffs-11727-ff4251073048-app.herokuapp.com/' || 'localhost:8081';
 
 const connection = io('ws://' + WebPORT);
 const chatBody = document.querySelector('#chat-box');
