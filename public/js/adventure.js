@@ -10,7 +10,7 @@ document.querySelector('#send').onclick = () => {
 };
 
 connection.on('broadcast', (msg) => {
-    chatBody.innerHTML = chatBody.innerHTML + msg;
+    chatBody.innerHTML = chatBody.innerHTML + `\n${msg}`;
 });
 
 
