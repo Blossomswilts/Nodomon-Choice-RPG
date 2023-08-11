@@ -48,6 +48,7 @@ router.get('/adventure', withAuth, async (req, res) => {
     // eslint-disable-next-line eqeqeq
     const activeDonomon = donomons.find((donomon) => donomon.id == req.session.activeDonomonId);
     res.render('adventure', {
+        username: req.session.username,
         donomons,
         activeDonomon,
     });

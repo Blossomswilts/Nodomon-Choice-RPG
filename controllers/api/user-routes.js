@@ -118,4 +118,8 @@ router.post('/logout', (req, res) => {
     }
 });
 
+router.get('/username', (req, res) => {
+    return(res.session.username);
+});
+
 module.exports = router;

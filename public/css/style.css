@@ -224,3 +224,12 @@
   font-size: 30px;
   margin-left: 10%;
  }
+
+ #username {
+  display: none;
+ }
+
+ #chat-box {
+  background-color: white;
+  height: 400px;
+ }
