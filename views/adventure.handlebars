@@ -48,8 +48,10 @@
 
 {{!-- This needs to be worked on (currently does not work **) --}}
 <h1>World Chat</h1>
-<pre id="chat-box" style="overflow: scroll"></pre>
+<pre id="chat-box" style="overflow: auto"></pre>
 <input type="text" id="message" placeholder="Type your message here">
 <button id="send" title="Send">Send Message</button>
+<div id="username">{{username}}</div>
+
 <script src="https://cdn.socket.io/socket.io-3.0.0.js"></script>
 <script src="./js/adventure.js"></script>
