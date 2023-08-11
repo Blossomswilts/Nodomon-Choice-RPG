@@ -4,12 +4,13 @@ const connection = io(`${wsProtocol}://${location.hostname}:${location.port}`);
 const chatBody = document.querySelector('#chat-box');
 
 document.querySelector('#send').onclick = () => {
+    const username = document.getElementById('username').textContent;
     const text = document.querySelector('#message').value;
-    connection.emit('message', text);
+    connection.emit('message', `${username}: ${text}`);
 };
 
 connection.on('broadcast', (msg) => {
-    console.log('message: ' + msg);
+    console.log(msg);
 });
 
 

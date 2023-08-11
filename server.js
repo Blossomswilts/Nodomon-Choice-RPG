@@ -79,7 +79,7 @@ sequelize.sync({ force: false }).then(() => {
         socket.on('message', (message) => {
             io.emit(
                 'broadcast',
-                `Player said ${message}`,
+                message,
             );
         });
     });
