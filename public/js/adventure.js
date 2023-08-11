@@ -1,5 +1,6 @@
 //const WebPORT = //'frozen-cliffs-11727-ff4251073048-app.herokuapp.com/' || 'localhost:8081';
-const wsProtocol = location.protocol.toLocaleLowerCase() === 'http:' ? 'ws' : 'wss';
+const wsProtocol =
+    location.protocol.toLocaleLowerCase() === 'http:' ? 'ws' : 'wss';
 const connection = io(`${wsProtocol}://${location.hostname}:${location.port}`);
 const chatBody = document.querySelector('#chat-box');
 
@@ -12,8 +13,6 @@ document.querySelector('#send').onclick = () => {
 connection.on('broadcast', (msg) => {
     chatBody.innerHTML = chatBody.innerHTML + `\n${msg}`;
 });
-
-
 
 //error function
 
@@ -115,35 +114,43 @@ dropDownItems.forEach((item) => {
 });
 
 //call updateDonomon on click of answer
-const question = document.getElementById('questionText');
-const answer1 = document.getElementById('answer1');
-const answer2 = document.getElementById('answer2');
-const answer3 = document.getElementById('answer3');
-const answer4 = document.getElementById('answer4');
+function setUpListeners() {
+    const question = document.getElementById('questionText');
+    const answer1 = document.getElementById('answer1');
+    const answer2 = document.getElementById('answer2');
+    const answer3 = document.getElementById('answer3');
+    const answer4 = document.getElementById('answer4');
 
-answer1.addEventListener('click', () => {
-    const answerId = answer1.dataset.id;
-    updateDonomon(answerId, question.dataset.id);
+    answer1.addEventListener('click', () => {
+        const answerId = answer1.dataset.id;
+        updateDonomon(answerId, question.dataset.id);
+        getRandomQuestion();
+    });
+
+    answer2.addEventListener('click', () => {
+        const answerId = answer2.dataset.id;
+        updateDonomon(answerId, question.dataset.id);
+        getRandomQuestion();
+    });
+
+    answer3.addEventListener('click', () => {
+        const answerId = answer3.dataset.id;
+        updateDonomon(answerId, question.dataset.id);
+        getRandomQuestion();
+    });
+
+    answer4.addEventListener('click', () => {
+        const answerId = answer4.dataset.id;
+        updateDonomon(answerId, question.dataset.id);
+        getRandomQuestion();
+    });
     getRandomQuestion();
-});
+}
 
-answer2.addEventListener('click', () => {
-    const answerId = answer2.dataset.id;
-    updateDonomon(answerId, question.dataset.id);
-    getRandomQuestion();
-});
-
-answer3.addEventListener('click', () => {
-    const answerId = answer3.dataset.id;
-    updateDonomon(answerId, question.dataset.id);
-    getRandomQuestion();
-});
-
-answer4.addEventListener('click', () => {
-    const answerId = answer4.dataset.id;
-    updateDonomon(answerId, question.dataset.id);
-    getRandomQuestion();
-});
-
-//Fix so that it only gets called if there is an active donomon*************************
-getRandomQuestion();
+//check if there is an active donomon and if there is, call setUpListeners
+const activeDonomon = document.getElementById('activeName');
+if (activeDonomon) {
+    setUpListeners();
+} else {
+    //do nothing
+}
